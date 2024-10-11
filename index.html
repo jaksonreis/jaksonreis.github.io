@@ -37,6 +37,40 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet" />
+  <style>
+    /* Estilo para o modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #myModal {
+      display: none;
+    }
+
+    /* Estilo para a imagem dentro do modal */
+    .modal-content {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+
+
+    /* Estilo para a descrição */
+    .description {
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 
 <body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
@@ -107,15 +141,14 @@
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="images/p5.jpg" alt="" />
+                <img class="image img-fluid" onclick="abrirModal('images/p5.jpg', 'testedcvsvdsvsdvssdvs')"
+                  src="images/p5.jpg" alt="" />
               </div>
-              <a href="images/p5.jpg" class="img-pop-up">
-                <div class="middle">
-                  <div class="text align-self-center d-flex">
-                    <img src="images/preview.png" alt="" />
-                  </div>
+              <div class="middle">
+                <div class="text align-self-center d-flex">
+                  <img src="images/preview.png" alt="" />
                 </div>
-              </a>
+              </div>
             </div>
             <div class="p-inner">
               <h4>PF Broker</h4>
@@ -127,15 +160,13 @@
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="images/p1.jpg" alt="" />
+                <img class="image img-fluid" onclick="abrirModal('images/p1.jpg')" src="images/p1.jpg" alt="" />
               </div>
-              <a href="images/p1.jpg" class="img-pop-up">
-                <div class="middle">
-                  <div class="text align-self-center d-flex">
-                    <img src="images/preview.png" alt="" />
-                  </div>
+              <div class="middle">
+                <div class="text align-self-center d-flex">
+                  <img src="images/preview.png" alt="" />
                 </div>
-              </a>
+              </div>
             </div>
             <div class="p-inner">
               <h4>Controlhe de Gastos</h4>
@@ -148,15 +179,13 @@
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="images/p2.jpg" alt="" />
+                <img class="image img-fluid" onclick="abrirModal('images/p2.jpg')" src="images/p2.jpg" alt="" />
               </div>
-              <a href="images/p2.jpg" class="img-pop-up">
-                <div class="middle">
-                  <div class="text align-self-center d-flex">
-                    <img src="images/preview.png" alt="" />
-                  </div>
+              <div class="middle">
+                <div class="text align-self-center d-flex">
+                  <img src="images/preview.png" alt="" />
                 </div>
-              </a>
+              </div>
             </div>
             <div class="p-inner">
               <h4>PlanetFone PABX</h4>
@@ -168,15 +197,13 @@
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="images/p3.jpg" alt="" />
+                <img class="image img-fluid" onclick="abrirModal('images/p3.jpg')" src="images/p3.jpg" alt="" />
               </div>
-              <a href="images/p3.jpg" class="img-pop-up">
-                <div class="middle">
-                  <div class="text align-self-center d-flex">
-                    <img src="images/preview.png" alt="" />
-                  </div>
+              <div class="middle">
+                <div class="text align-self-center d-flex">
+                  <img src="images/preview.png" alt="" />
                 </div>
-              </a>
+              </div>
             </div>
             <div class="p-inner">
               <h4>Candidato a Deputado Estadual</h4>
@@ -189,15 +216,13 @@
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="images/p4.jpg" alt="" />
+                <img class="image img-fluid" onclick="abrirModal('images/p4.jpg')" src="images/p4.jpg" alt="" />
               </div>
-              <a href="images/p4.jpg" class="img-pop-up">
-                <div class="middle">
-                  <div class="text align-self-center d-flex">
-                    <img src="images/preview.png" alt="" />
-                  </div>
+              <div class="middle">
+                <div class="text align-self-center d-flex">
+                  <img src="images/preview.png" alt="" />
                 </div>
-              </a>
+              </div>
             </div>
             <div class="p-inner">
               <h4>Consulta API - Geração PDF</h4>
@@ -211,15 +236,13 @@
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="images/p6.jpg" alt="" />
+                <img class="image img-fluid" onclick="abrirModal('images/p6.jpg')" src="images/p6.jpg" alt="" />
               </div>
-              <a href="images/p6.jpg" class="img-pop-up">
-                <div class="middle">
-                  <div class="text align-self-center d-flex">
-                    <img src="images/preview.png" alt="" />
-                  </div>
+              <div class="middle">
+                <div class="text align-self-center d-flex">
+                  <img src="images/preview.png" alt="" />
                 </div>
-              </a>
+              </div>
             </div>
             <div class="p-inner">
               <h4>API de Envio</h4>
@@ -232,15 +255,13 @@
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="images/p7.jpg" alt="" />
+                <img class="image img-fluid" onclick="abrirModal('images/p7.jpg')" src="images/p7.jpg" alt="" />
               </div>
-              <a href="images/p7.jpg" class="img-pop-up">
-                <div class="middle">
-                  <div class="text align-self-center d-flex">
-                    <img src="images/preview.png" alt="" />
-                  </div>
+              <div class="middle">
+                <div class="text align-self-center d-flex">
+                  <img src="images/preview.png" alt="" />
                 </div>
-              </a>
+              </div>
             </div>
             <div class="p-inner">
               <h4>PF Cloud</h4>
@@ -339,9 +360,8 @@
             automatização de processos.
           </p>
           <p class="mb-5">
-            Atualmente trabalho em uma empresa em Belo Horizonte, Minas Gerais e possuo
-            conhecimenstos sólidos para lhe atender e contribuir com a solução
-            total.
+            Atualmente trabalho remoto em Corinto, Minas Gerais e faço manutenção nos sistemas de uma empresa
+            especializada em dados cadastrais.
           </p>
 
           <p>
@@ -371,8 +391,8 @@
             </span>
             <h3 class="mb-4">API Restful</h3>
             <p>
-              Desenvolvemos API RESTful utilizando Node.js, PHP e os mais modernos
-              conceitos a respeito de segurança, performance e commuita
+              API RESTful utilizando Node.js, PHP e os mais modernos
+              conceitos a respeito de segurança, performance e com bastante
               flexibilidade.
             </p>
           </div>
@@ -384,7 +404,7 @@
             </span>
             <h3 class="mb-4">Aplicações Web</h3>
             <p>
-              Desenvolvemos aplicações e sistemas web, chats, landPages, sites
+              Aplicações e sistemas web, chats, sites
               pessoais e comerciais, sites institucionais, entre outros.
             </p>
           </div>
@@ -396,7 +416,7 @@
             </span>
             <h3 class="mb-4">Aplicações Mobile</h3>
             <p>
-              Desenvolvemos de aplicações mobiles multiplataformas para
+              Aplicações mobiles multiplataformas para
               dispositivos como IOS e Android, disponibilizando em suas
               respectivas lojas de aplicativos.
             </p>
@@ -479,6 +499,11 @@
         </p>
       </div>
 
+      <!-- O modal -->
+      <div id="myModal" class="modal">
+        <img id="modalImg" class="modal-content">
+        <!-- <div id="modalDescription" class="description"></div> -->
+      </div>
       <div class="row mb-5">
         <div class="col-md-12 text-center">
           <p>
@@ -498,6 +523,24 @@
     </div>
   </footer>
 
+  <script>
+    // Função para abrir o modal com a imagem clicada e a descrição
+    function abrirModal(src, descricao) {
+      var modal = document.getElementById('myModal');
+      var modalImg = document.getElementById('modalImg');
+      var modalDescription = document.getElementById('modalDescription');
+
+      modal.style.display = 'flex';
+      modalImg.src = src;
+      modalDescription.textContent = descricao;
+    }
+
+    // Fechar o modal quando se clica fora da imagem
+    var modal = document.getElementById('myModal');
+    modal.onclick = function () {
+      modal.style.display = 'none';
+    }
+  </script>
   <script src="js/vendor/jquery.min.js"></script>
   <script src="js/vendor/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/vendor/popper.min.js"></script>
