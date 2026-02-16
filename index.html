@@ -1,626 +1,1432 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
-  <meta property="og:title" content="Portfolio Jakson Reis" />
-  <meta property="og:image" content="https://jaksonreis.github.io" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="description" content="Apresentação, habilidades, informações de contato." />
-  <meta name="author" content="Jakson" />
-  <meta name="theme-color" content="black">
-  <meta property="og:description" content="Apresentação, habilidades, informações de contato." />
-  <meta property="og:image"
-    content="https://github.com/jaksonreis/jaksonreis.github.io/blob/main/images/image_1.jpg?raw=true" />
-  <meta property="og:url" content="https://jaksonreis.github.io/index.html" />
-  <meta property="og:site_name" content="Portfolio Jakson Reis" />
-  <meta property="og:type" content="website" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jakson Reis | Senior Software Engineer</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB339BD7YT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a',
+                        accent: '#3b82f6',
+                        'accent-glow': '#60a5fa',
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-    gtag("config", "G-GB339BD7YT");
-  </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
 
-  <title>JK| Desenvolvedor Web</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="css/animate.css" />
-  <link rel="stylesheet" href="css/flexslider.css" />
-  <link rel="stylesheet" href="fonts/icomoon/style.css" />
+        .glass {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-  <link rel="stylesheet" href="css/bootstrap.css" />
-  <link rel="stylesheet" href="css/style.css" />
+        /* CORREÇÃO: Navbar sempre com fundo escuro, sem transparência */
+        .navbar-solid {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet" />
-  <style>
-    /* Estilo para o modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+        /* Estado inicial no topo - sem linha estranha */
+        .navbar-top {
+            background: transparent;
+            backdrop-filter: none;
+            border-bottom: 1px solid transparent;
+        }
 
-    #myModal {
-      display: none;
-    }
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    /* Estilo para a imagem dentro do modal */
-    .modal-content {
-      max-width: 80%;
-      max-height: 80%;
-      object-fit: contain;
-    }
+        .glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
 
+        .card-hover {
+            transition: all 0.3s ease;
+        }
 
-    /* Estilo para a descrição */
-    .description {
-      color: white;
-      text-align: center;
-      margin-top: 10px;
-    }
-  </style>
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .grid-bg {
+            background-image: radial-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Language transition */
+        .lang-content {
+            transition: opacity 0.3s ease;
+        }
+
+        .lang-fade-out {
+            opacity: 0;
+        }
+
+        .lang-btn {
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: rgba(59, 130, 246, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
+            color: white;
+        }
+
+        /* Smooth transition for navbar */
+        #navbar {
+            transition: all 0.3s ease;
+        }
+
+        .pt-safe {
+            padding-top: 6rem;
+            /* 96px de espaço no topo */
+        }
+
+        @media (max-width: 768px) {
+            .animate-float {
+                animation: none;
+                transform: none;
+            }
+
+            .pt-safe {
+                padding-top: 8rem;
+                /* Mais espaço no desktop se quiser */
+            }
+        }
+    </style>
 </head>
 
-<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
-  <nav class="navbar navbar-expand-lg site-navbar navbar-light bg-light" id="pb-navbar">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
-        aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<body class="antialiased">
 
-      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample09">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#section-home">Início</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section-portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section-resume">Resumo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section-about">Sobre</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section-contact">Contato</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <section class="site-hero" style="background-image: url(images/image_1.jpg)" id="section-home"
-    data-stellar-background-ratio="0.5">
-    <div class="container">
-      <div class="row intro-text align-items-center justify-content-center">
-        <div class="col-md-10 text-center pt-5">
-          <h1 class="site-heading site-animate">
-            <strong class="d-block">Jakson Reis</strong>
-          </h1>
-          <strong class="d-block text-white text-uppercase letter-spacing">Sou um Desenvolvedor Web</strong>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- section -->
-
-  <section class="site-section" id="section-portfolio">
-    <div class="container">
-      <div class="row">
-        <div class="section-heading text-center col-md-12">
-          <h2><strong>Portfolio</strong></h2>
-        </div>
-      </div>
-      <div class="filters">
-        <ul>
-          <li class="active" data-filter="*">Todos</li>
-          <li data-filter=".packaging">LandPages</li>
-          <li data-filter=".mobile">Mobile</li>
-          <li data-filter=".system">Sistemas</li>
-          <li data-filter=".backend">API</li>
-        </ul>
-      </div>
-
-      <div class="filters-content">
-        <div class="row grid">
-          <div class="single-portfolio col-sm-4 all system">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" onclick="abrirModal('images/p5.jpg', 'testedcvsvdsvsdvssdvs')"
-                  src="images/p5.jpg" alt="" />
-              </div>
-              <div class="middle">
-                <div class="text align-self-center d-flex">
-                  <img src="images/preview.png" alt="" />
+    <!-- Navigation - CORRIGIDO -->
+    <nav class="fixed w-full z-50 navbar-top" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div
+                        class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-xl font-display">
+                        JR</div>
+                    <span class="font-display font-bold text-xl tracking-tight">Jakson Reis</span>
                 </div>
-              </div>
-            </div>
-            <div class="p-inner">
-              <h4>PF Broker</h4>
-              <div class="cat" style="height: 50px;">Aplicação intermediária que integra um sistema de atendimento com outras APIs Oficiais,
-                como Instagram, Whatsapp, Telegram, seguindo a extrutura ja existente</div>
-            </div>
-          </div>
-          <div class="single-portfolio col-sm-4 all mobile">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" onclick="abrirModal('images/p1.jpg')" src="images/p1.jpg" alt="" />
-              </div>
-              <div class="middle">
-                <div class="text align-self-center d-flex">
-                  <img src="images/preview.png" alt="" />
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home"
+                        class="nav-home text-gray-300 hover:text-white transition-colors text-sm font-medium">Início</a>
+                    <a href="#about"
+                        class="nav-about text-gray-300 hover:text-white transition-colors text-sm font-medium">Sobre</a>
+                    <a href="#experience"
+                        class="nav-experience text-gray-300 hover:text-white transition-colors text-sm font-medium">Experiência</a>
+                    <a href="#skills"
+                        class="nav-skills text-gray-300 hover:text-white transition-colors text-sm font-medium">Skills</a>
+                    <a href="#contact"
+                        class="nav-contact px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-all hover:shadow-lg hover:shadow-blue-500/25">Contato</a>
+
+                    <!-- Language Switcher - ALTERADO PARA <a> -->
+                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-700">
+                        <a href="#pt" onclick="event.preventDefault(); switchLanguage('pt');" id="btn-pt"
+                            class="lang-btn active px-3 py-1 rounded-lg border border-gray-600 text-gray-400 hover:text-white text-sm font-medium">PT</a>
+                        <a href="#en" onclick="event.preventDefault(); switchLanguage('en');" id="btn-en"
+                            class="lang-btn px-3 py-1 rounded-lg border border-gray-600 text-gray-400 hover:text-white text-sm font-medium">EN</a>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="p-inner">
-              <h4>Controlhe de Gastos</h4>
-              <div class="cat" style="height: 50px;">
-                Integração API, Login Social, Database NoSQL, Animação
-              </div>
-            </div>
-          </div>
-          <div class="single-portfolio col-sm-4 all system">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" onclick="abrirModal('images/p2.jpg')" src="images/p2.jpg" alt="" />
-              </div>
-              <div class="middle">
-                <div class="text align-self-center d-flex">
-                  <img src="images/preview.png" alt="" />
+
+                <div class="flex items-center gap-4 md:hidden">
+                    <div class="flex items-center gap-2">
+                        <a href="#pt" onclick="event.preventDefault(); switchLanguage('pt');" id="btn-pt-mobile"
+                            class="lang-btn active px-2 py-1 rounded border border-gray-600 text-gray-400 text-xs">PT</a>
+                        <a href="#en" onclick="event.preventDefault(); switchLanguage('en');" id="btn-en-mobile"
+                            class="lang-btn px-2 py-1 rounded border border-gray-600 text-gray-400 text-xs">EN</a>
+                    </div>
+                    <button class="text-gray-300" onclick="toggleMenu()">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
                 </div>
-              </div>
             </div>
-            <div class="p-inner">
-              <h4>PlanetFone PABX</h4>
-              <div class="cat" style="height: 50px;">Manutenção em sistemas PABX, componentes de telefonia, integrações com
-                WhatsApp, criação de sistemas de relatórios e supervisão de agentes</div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden navbar-solid border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="nav-home block px-3 py-2 text-gray-300 hover:text-white">Início</a>
+                <a href="#about" class="nav-about block px-3 py-2 text-gray-300 hover:text-white">Sobre</a>
+                <a href="#experience"
+                    class="nav-experience block px-3 py-2 text-gray-300 hover:text-white">Experiência</a>
+                <a href="#skills" class="nav-skills block px-3 py-2 text-gray-300 hover:text-white">Skills</a>
+                <a href="#contact" class="nav-contact block px-3 py-2 text-blue-400">Contato</a>
             </div>
-          </div>
-          <div class="single-portfolio col-sm-4 all packaging">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" onclick="abrirModal('images/p3.jpg')" src="images/p3.jpg" alt="" />
-              </div>
-              <div class="middle">
-                <div class="text align-self-center d-flex">
-                  <img src="images/preview.png" alt="" />
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg pt-safe">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse-slow">
+            </div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse-slow"
+                style="animation-delay: 2s;"></div>
+            <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-3xl">
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 md:animate-float">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                <span class="available-text text-sm text-gray-300">Disponível para oportunidades</span>
+            </div>
+
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                Senior <span class="text-gradient">Software</span><br>
+                Engineer
+            </h1>
+
+            <p class="hero-desc text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 font-light">
+                Especialista em <span class="text-white font-medium">Python</span> & <span
+                    class="text-white font-medium">Node.js</span>,
+                construindo sistemas escaláveis, APIs de alta performance e arquiteturas cloud-native.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contact"
+                    class="cta-primary px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold text-lg hover:shadow-lg hover:shadow-blue-500/25 transition-all transform hover:scale-105 flex items-center gap-2">
+                    <span>Vamos conversar</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#experience"
+                    class="cta-secondary px-8 py-4 rounded-full glass text-white font-semibold text-lg hover:bg-white/10 transition-all flex items-center gap-2">
+                    <span>Ver experiências</span>
+                    <i data-lucide="briefcase" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="mt-20 flex justify-center gap-8 text-gray-500">
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-3xl font-bold text-white font-display">5+</span>
+                    <span class="stat-years text-sm">Anos Exp.</span>
                 </div>
-              </div>
-            </div>
-            <div class="p-inner">
-              <h4>Biometria Facial</h4>
-              <div class="cat" style="height: 50px;">
-                Cadastro de biometria facial para reconhecimento posteriormente para validação de dados pessoais.
-              </div>
-            </div>
-          </div>
-          <div class="single-portfolio col-sm-4 all backend">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" onclick="abrirModal('images/p4.jpg')" src="images/p4.jpg" alt="" />
-              </div>
-              <div class="middle">
-                <div class="text align-self-center d-flex">
-                  <img src="images/preview.png" alt="" />
+                <div class="w-px h-12 bg-gray-800"></div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-3xl font-bold text-white font-display">50+</span>
+                    <span class="stat-projects text-sm">Projetos</span>
                 </div>
-              </div>
-            </div>
-            <div class="p-inner">
-              <h4>Consulta API - Geração PDF</h4>
-              <div class="cat" style="height: 50px;">
-                Aplicação integrada ao Whatsapp para consultar dados e gerar um PDF a partir de um template
-                HTML.
-              </div>
-            </div>
-          </div>
-          <div class="single-portfolio col-sm-4 all backend">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" onclick="abrirModal('images/p6.jpg')" src="images/p6.jpg" alt="" />
-              </div>
-              <div class="middle">
-                <div class="text align-self-center d-flex">
-                  <img src="images/preview.png" alt="" />
+                <div class="w-px h-12 bg-gray-800"></div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-3xl font-bold text-white font-display">3</span>
+                    <span class="stat-companies text-sm">Empresas</span>
                 </div>
-              </div>
             </div>
-            <div class="p-inner">
-              <h4>API de Envio</h4>
-              <div class="cat" style="height: 50px;">
-                API para envios diversos, como SMS, Email, Arquivos Codificados via SFTP, upload direto na AWS
-              </div>
-            </div>
-          </div>
-          <div class="single-portfolio col-sm-4 all system">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" onclick="abrirModal('images/p7.jpg')" src="images/p7.jpg" alt="" />
-              </div>
-              <div class="middle">
-                <div class="text align-self-center d-flex">
-                  <img src="images/preview.png" alt="" />
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-500"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="about-title font-display text-4xl md:text-5xl font-bold mb-6">
+                        Sobre <span class="text-gradient">Mim</span>
+                    </h2>
+                    <div class="about-content space-y-6 text-gray-400 text-lg leading-relaxed">
+                        <p>
+                            Sou um <strong class="text-white">Senior Software Engineer</strong> com sólida experiência
+                            em desenvolvimento backend,
+                            construindo sistemas escaláveis e de alta disponibilidade usando Python e Node.js para
+                            resolver problemas reais de negócio.
+                        </p>
+                        <p>
+                            Especializo-me em projetar e desenvolver <strong class="text-white">APIs, microsserviços e
+                                soluções cloud-native</strong>,
+                            focando em performance, confiabilidade e arquitetura limpa. Tenho experiência em sistemas
+                            com alto volume de dados,
+                            integrações, automação e serviços distribuídos.
+                        </p>
+                        <p>
+                            Trabalho bem com equipes distribuídas, comunicando-me claramente com stakeholders técnicos e
+                            não técnicos,
+                            assumindo responsabilidade desde o design até a produção.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <span
+                            class="skill-tag px-4 py-2 rounded-full glass text-sm text-blue-300 border border-blue-500/20">Python</span>
+                        <span
+                            class="skill-tag px-4 py-2 rounded-full glass text-sm text-green-300 border border-green-500/20">Node.js</span>
+                        <span
+                            class="skill-tag px-4 py-2 rounded-full glass text-sm text-purple-300 border border-purple-500/20">REST
+                            APIs</span>
+                        <span
+                            class="skill-tag px-4 py-2 rounded-full glass text-sm text-orange-300 border border-orange-500/20">Docker</span>
+                        <span
+                            class="skill-tag px-4 py-2 rounded-full glass text-sm text-pink-300 border border-pink-500/20">Cloud</span>
+                        <span
+                            class="skill-tag px-4 py-2 rounded-full glass text-sm text-yellow-300 border border-yellow-500/20">Scrum</span>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="p-inner">
-              <h4>PF Cloud</h4>
-              <div class="cat" style="height: 50px;">
-                Plataforma para centralizar o gerenciamento, supervisão e configuração de todos os sistemas e Produtos
-                da empresa Planetfone
-              </div>
-            </div>
-          </div>
-          <div class="single-portfolio col-sm-4 all system">
-            <div class="relative">
-              <div class="thumb">
-                <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" onclick="abrirModal('images/p7.jpg')" src="images/p8.jpg" alt="" />
-              </div>
-              <div class="middle">
-                <div class="text align-self-center d-flex">
-                  <img src="images/preview.png" alt="" />
+
+                <div class="relative reveal">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl blur-2xl opacity-20">
+                    </div>
+                    <div class="relative glass rounded-3xl p-8 border border-gray-700">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div
+                                class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700 hover:border-blue-500/50 transition-colors">
+                                <i data-lucide="code-2" class="w-8 h-8 text-blue-400 mb-4"></i>
+                                <h3 class="card-backend font-display font-bold text-xl mb-2">Backend</h3>
+                                <p class="card-backend-desc text-gray-400 text-sm">APIs robustas e microsserviços
+                                    escaláveis</p>
+                            </div>
+                            <div
+                                class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700 hover:border-purple-500/50 transition-colors">
+                                <i data-lucide="database" class="w-8 h-8 text-purple-400 mb-4"></i>
+                                <h3 class="card-data font-display font-bold text-xl mb-2">Dados</h3>
+                                <p class="card-data-desc text-gray-400 text-sm">SQL & NoSQL, processamento em larga
+                                    escala</p>
+                            </div>
+                            <div
+                                class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700 hover:border-pink-500/50 transition-colors">
+                                <i data-lucide="cloud" class="w-8 h-8 text-pink-400 mb-4"></i>
+                                <h3 class="card-cloud font-display font-bold text-xl mb-2">Cloud</h3>
+                                <p class="card-cloud-desc text-gray-400 text-sm">Arquiteturas cloud-native e DevOps</p>
+                            </div>
+                            <div
+                                class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700 hover:border-green-500/50 transition-colors">
+                                <i data-lucide="bot" class="w-8 h-8 text-green-400 mb-4"></i>
+                                <h3 class="card-auto font-display font-bold text-xl mb-2">Automação</h3>
+                                <p class="card-auto-desc text-gray-400 text-sm">Pipelines e agentes inteligentes</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="p-inner">
-              <h4>OCR Documentos</h4>
-              <div class="cat" style="height: 50px;">
-                Extrair dados de Documentos de Identidade, CNH, Contas de Consumo para cadastros e validaçoes
-              </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-32 relative bg-gray-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <h2 class="exp-title font-display text-4xl md:text-5xl font-bold mb-6">
+                    Experiência <span class="text-gradient">Profissional</span>
+                </h2>
+                <p class="exp-subtitle text-gray-400 text-lg max-w-2xl mx-auto">
+                    Trajetória sólida em desenvolvimento de software, atuando em empresas de tecnologia e inovação.
+                </p>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- .section -->
 
-  <section class="site-section" id="section-resume">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 mb-5">
-          <div class="section-heading text-center">
-            <h2><strong>Resumo</strong></h2>
-            <br />
-            <h2 class="mb-5">Experiência</h2>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="resume-item mb-4">
-            <h3>Designer Responsivo</h3>
-            <p>
-              Desenvolvemos pensando sempre na experiência do usuário, visando
-              um designer que adapta a diferentes dispositivos e telas.
-            </p>
-          </div>
+            <div class="space-y-8">
+                <!-- Datasíntese -->
+                <div class="reveal group">
+                    <div
+                        class="glass rounded-3xl p-8 md:p-10 card-hover border border-gray-800 relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all">
+                        </div>
 
-          <div class="resume-item mb-4">
-            <h3>Animação</h3>
-            <p>
-              Trabalhamos com animações deixando o site mais atrativo,
-              moderno.
-            </p>
-          </div>
+                        <div class="relative z-10 flex flex-col md:flex-row md:items-start justify-between gap-6">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="job-title-senior font-display text-2xl font-bold text-white">Senior
+                                        Software Engineer</h3>
+                                    <span
+                                        class="badge-current px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-xs font-medium border border-green-500/20">Atual</span>
+                                </div>
+                                <p class="text-blue-400 font-semibold text-lg mb-4">Datasíntese</p>
 
-          <div class="resume-item mb-4">
-            <h3>Banco de Dados </h3>
-            <p>
-              Trabalhamos com os diferentes tipos de banco de dados relacionais, como PostgreSQL, MariaDB, e não
-              relacionais, como MongoDB, etc... conforme a
-              sua necessidade.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="resume-item mb-4">
-            <h3>API Rest</h3>
-            <p>
-              Atendemos as diferentes necessidade, desenvolvendo API flexiveis
-              para diferentes plataformas.
-            </p>
-          </div>
+                                <ul class="space-y-3 text-gray-400">
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="check-circle-2"
+                                            class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="exp-datasintese-1">Design e construção de sistemas backend
+                                            escaláveis e APIs de alta disponibilidade para processamento de dados em
+                                            larga escala</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="check-circle-2"
+                                            class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="exp-datasintese-2">Desenvolvimento de pipelines de extração de
+                                            dados automatizados e agentes inteligentes usando Python</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="check-circle-2"
+                                            class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="exp-datasintese-3">Sistemas de biometria facial em alta escala,
+                                            otimizados para performance e confiabilidade</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="check-circle-2"
+                                            class="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="exp-datasintese-4">Gestão de infraestrutura, servidores, otimização
+                                            de recursos e monitoramento em ambientes cloud</span>
+                                    </li>
+                                </ul>
 
-          <div class="resume-item mb-4">
-            <h3>Design Patterns</h3>
-            <p>
-              Usamos soluções generalizadas para aumentar a produtividade e
-              eficiência dos códigos.
-            </p>
-          </div>
+                                <div class="mt-6 flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">Node.js</span>
+                                    <span class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">Python</span>
+                                    <span class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">Docker</span>
+                                    <span class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">REST
+                                        APIs</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">Microservices</span>
+                                </div>
+                            </div>
 
-          <div class="resume-item mb-4">
-            <h3>Performance</h3>
-            <p>
-              Desenvolvemos o código sempre pensando em performance,
-              utilizando conceitos e técnicas para deixar sua aplicação mais
-              leve e rápida.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- .section -->
+                            <div class="md:text-right">
+                                <span class="date-datasintese text-gray-500 font-medium">Jun 2023 - Presente</span>
+                                <p class="duration-datasintese text-gray-600 text-sm mt-1">2 anos 9 meses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  <section class="site-section" id="section-about">
-    <div class="container">
-      <div class="row mb-5 align-items-center">
-        <div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
-          <img src="images/image_1.png" alt="Image placeholder" class="img-fluid" />
-        </div>
-        <div class="col-lg-5 pl-lg-5">
-          <div class="section-heading">
-            <h2>Sobre <strong>Mim</strong></h2>
-          </div>
-          <p class="lead">
-            Desenvolvedor full-stack apaixonado por novas tecnologias e pela
-            criação de soluções voltadas para a web, mobile e para a
-            automatização de processos.
-          </p>
-          <p class="mb-5">
-            Atualmente trabalho remoto em Corinto, Minas Gerais e faço manutenção nos sistemas de uma empresa
-            especializada em dados cadastrais.
-          </p>
+                <!-- PlanetTech -->
+                <div class="reveal group">
+                    <div
+                        class="glass rounded-3xl p-8 md:p-10 card-hover border border-gray-800 relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all">
+                        </div>
 
-          <p>
-            <a href="#section-contact" class="btn btn-primary px-4 py-2 btn-sm smoothscroll">Contratar</a>
-            <a href="./jakson-reis.pdf" class="btn btn-secondary px-4 py-2 btn-sm" target="_blank"
-              download="currículo-jakson">Currículo</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+                        <div class="relative z-10 flex flex-col md:flex-row md:items-start justify-between gap-6">
+                            <div class="flex-1">
+                                <h3 class="job-title-backend font-display text-2xl font-bold text-white mb-2">Backend
+                                    Software Engineer</h3>
+                                <p class="text-purple-400 font-semibold text-lg mb-4">PlanetTech</p>
 
-  <section class="site-section pb-0" id="section-services">
-    <div class="container">
-      <div class="row mb-4">
-        <div class="col-md-12">
-          <div class="section-heading text-center">
-            <h2>Meus <strong>Serviços</strong></h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-lg-4 text-center mb-5">
-          <div class="site-service-item site-animate blog-entry" data-animate-effect="fadeIn">
-            <span class="icon">
-              <span class="icon-cloud"></span>
-            </span>
-            <h3 class="mb-4">API Restful</h3>
-            <p>
-              API RESTful utilizando Node.js, PHP e os mais modernos
-              conceitos a respeito de segurança, performance e com bastante
-              flexibilidade.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 text-center mb-5">
-          <div class="site-service-item site-animate blog-entry" data-animate-effect="fadeIn">
-            <span class="icon">
-              <span class="icon-desktop"></span>
-            </span>
-            <h3 class="mb-4">Aplicações Web</h3>
-            <p>
-              Aplicações e sistemas web, chats, sites
-              pessoais e comerciais, sites institucionais, entre outros.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 text-center mb-5">
-          <div class="site-service-item site-animate blog-entry" data-animate-effect="fadeIn">
-            <span class="icon">
-              <span class="icon-mobile"></span>
-            </span>
-            <h3 class="mb-4">Aplicações Mobile</h3>
-            <p>
-              Aplicações mobiles multiplataformas para
-              dispositivos como IOS e Android, disponibilizando em suas
-              respectivas lojas de aplicativos.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                                <ul class="space-y-3 text-gray-400">
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="check-circle-2"
+                                            class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="exp-planet-1">Manutenção e evolução de sistemas de telefonia
+                                            empresarial (PABX) e plataformas de comunicação</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="check-circle-2"
+                                            class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="exp-planet-2">Modernização de sistemas legados, migração de PHP
+                                            para Node.js (NestJS) e TypeScript</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="check-circle-2"
+                                            class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="exp-planet-3">Desenvolvimento de interfaces web com React e
+                                            aplicativos mobile com React Native</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="check-circle-2"
+                                            class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="exp-planet-4">Participação em discussões arquiteturais e
+                                            refactoring para reduzir débito técnico</span>
+                                    </li>
+                                </ul>
 
-  <section class="site-section" id="section-contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 mb-5">
-          <div class="section-heading text-center">
-            <h2><strong>Você deseja conversar ?</strong></h2>
-          </div>
-        </div>
+                                <div class="mt-6 flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">Node.js</span>
+                                    <span class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">NestJS</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">TypeScript</span>
+                                    <span class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">React</span>
+                                    <span class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">React
+                                        Native</span>
+                                </div>
+                            </div>
 
-        <div class="col-md-7 mb-5 mb-md-0">
-          <form action="https://formsubmit.co/jakson.reis@hotmail.com" method="post" class="site-form">
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://jaksonreis.github.io/" />
+                            <div class="md:text-right">
+                                <span class="date-planet text-gray-500 font-medium">Jan 2023 - Abr 2024</span>
+                                <p class="duration-planet text-gray-600 text-sm mt-1">1 ano 4 meses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <h3 class="mb-5">Envie uma mensagem!</h3>
-            <div class="form-group">
-              <input type="text" class="form-control px-3 py-4" name="name" placeholder="Nome" />
+                <!-- Distribuidora Moura -->
+                <div class="reveal group">
+                    <div
+                        class="glass rounded-3xl p-8 md:p-10 card-hover border border-gray-800 relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl group-hover:bg-pink-500/20 transition-all">
+                        </div>
+
+                        <div class="relative z-10 flex flex-col md:flex-row md:items-start justify-between gap-6">
+                            <div class="flex-1">
+                                <h3 class="job-title-fullstack font-display text-2xl font-bold text-white mb-2">Full
+                                    Stack Software Engineer</h3>
+                                <p class="text-pink-400 font-semibold text-lg mb-4">Distribuidora Moura</p>
+
+                                <ul class="space-y-3 text-gray-400">
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="check-circle-2"
+                                            class="w-5 h-5 text-pink-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="exp-moura-1">Desenvolvimento de plataforma de gestão logística para
+                                            solicitação e rastreamento de entregas via mobile app</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="check-circle-2"
+                                            class="w-5 h-5 text-pink-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="exp-moura-2">Modelagem de dados, implementação de regras de negócio
+                                            e desenvolvimento de REST APIs</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i data-lucide="check-circle-2"
+                                            class="w-5 h-5 text-pink-500 mt-0.5 flex-shrink-0"></i>
+                                        <span class="exp-moura-3">Redução de inconsistências de endereço e otimização de
+                                            workflow operacional</span>
+                                    </li>
+                                </ul>
+
+                                <div class="mt-6 flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">Full
+                                        Stack</span>
+                                    <span class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">REST
+                                        API</span>
+                                    <span class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">Mobile</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs">Logística</span>
+                                </div>
+                            </div>
+
+                            <div class="md:text-right">
+                                <span class="date-moura text-gray-500 font-medium">Jan 2021 - Dez 2022</span>
+                                <p class="duration-moura text-gray-600 text-sm mt-1">2 anos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <input type="email" class="form-control px-3 py-4" name="email" placeholder="Email" />
-            </div>
-            <div class="form-group">
-              <input type="tel" class="form-control px-3 py-4" name="phone" placeholder="Telefone" />
-            </div>
-            <div class="form-group mb-5">
-              <textarea class="form-control px-3 py-4" cols="30" rows="10" name="message"
-                placeholder="Digite sua messagem"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary px-4 py-3" name="button" value="Enviar Mensagem" />
-            </div>
-          </form>
         </div>
-        <div class="col-md-5 pl-md-5">
-          <h3 class="mb-5">Detalhes de contato</h3>
-          <ul class="site-contact-details">
-            <li>
-              <span class="text-uppercase">Email</span>
-              jakson.reis@hotmail.com
-            </li>
-            <li>
-              <span class="text-uppercase">Phone</span>
-              +55 38 999336995
-            </li>
-            <li>
-              <span class="text-uppercase">LinkedIn</span>
-              <a href="https://www.linkedin.com/in/jakson-reis-024b3b16a/">Jakson Reis</a>
-            </li>
-            <li>
-              <span class="text-uppercase">Endereço</span>
-              Corinto <br />
-              Minas Gerais <br />
-            </li>
-          </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <h2 class="skills-title font-display text-4xl md:text-5xl font-bold mb-6">
+                    Habilidades & <span class="text-gradient">Tecnologias</span>
+                </h2>
+                <p class="skills-subtitle text-gray-400 text-lg max-w-2xl mx-auto">
+                    Stack tecnológico moderno focado em performance, escalabilidade e boas práticas de desenvolvimento.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Backend -->
+                <div
+                    class="reveal glass rounded-2xl p-8 border border-gray-800 hover:border-blue-500/50 transition-all group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="server" class="w-7 h-7 text-blue-400"></i>
+                    </div>
+                    <h3 class="skill-cat-backend font-display text-xl font-bold mb-4">Backend</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">Python</span>
+                            <div class="w-24 h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-500 w-[95%]"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">Node.js</span>
+                            <div class="w-24 h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-green-500 w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">NestJS</span>
+                            <div class="w-24 h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-red-500 w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">TypeScript</span>
+                            <div class="w-24 h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-400 w-[88%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="reveal glass rounded-2xl p-8 border border-gray-800 hover:border-purple-500/50 transition-all group"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="layout" class="w-7 h-7 text-purple-400"></i>
+                    </div>
+                    <h3 class="skill-cat-frontend font-display text-xl font-bold mb-4">Frontend</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">React</span>
+                            <div class="w-24 h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-cyan-400 w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">React Native</span>
+                            <div class="w-24 h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-cyan-500 w-[80%]"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">HTML/CSS/JS</span>
+                            <div class="w-24 h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-orange-400 w-[90%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="reveal glass rounded-2xl p-8 border border-gray-800 hover:border-green-500/50 transition-all group"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="database" class="w-7 h-7 text-green-400"></i>
+                    </div>
+                    <h3 class="skill-cat-database font-display text-xl font-bold mb-4">Banco de Dados</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">PostgreSQL</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">MySQL</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">MongoDB</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Redis</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Elasticsearch</span>
+                    </div>
+                </div>
+
+                <!-- DevOps -->
+                <div
+                    class="reveal glass rounded-2xl p-8 border border-gray-800 hover:border-pink-500/50 transition-all group">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-pink-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="cloud" class="w-7 h-7 text-pink-400"></i>
+                    </div>
+                    <h3 class="skill-cat-devops font-display text-xl font-bold mb-4">DevOps & Cloud</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Docker</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">AWS</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">CI/CD</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Linux</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Nginx</span>
+                    </div>
+                </div>
+
+                <!-- Architecture -->
+                <div class="reveal glass rounded-2xl p-8 border border-gray-800 hover:border-yellow-500/50 transition-all group"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="network" class="w-7 h-7 text-yellow-400"></i>
+                    </div>
+                    <h3 class="skill-cat-arch font-display text-xl font-bold mb-4">Arquitetura</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">REST APIs</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Microservices</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Clean Code</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">SOLID</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Design Patterns</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="reveal glass rounded-2xl p-8 border border-gray-800 hover:border-orange-500/50 transition-all group"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="wrench" class="w-7 h-7 text-orange-400"></i>
+                    </div>
+                    <h3 class="skill-cat-tools font-display text-xl font-bold mb-4">Ferramentas</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Git</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">GitHub</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Jira</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Scrum</span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-sm">Postman</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row mb-5">
-        <p class="col-12 text-center">
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          &copy;
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          Todos os direitos reservados
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
-      </div>
+    <!-- Education & Certs -->
+    <section class="py-32 relative bg-gray-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <h2 class="edu-title font-display text-3xl md:text-4xl font-bold mb-8">
+                        Formação <span class="text-gradient">Acadêmica</span>
+                    </h2>
 
-      <!-- O modal -->
-      <div id="myModal" class="modal">
-        <img id="modalImg" class="modal-content">
-        <!-- <div id="modalDescription" class="description"></div> -->
-      </div>
-      <div class="row mb-5">
-        <div class="col-md-12 text-center">
-          <p>
-            <a href="https://www.facebook.com/jakson.reis.54/" class="social-item" target="_blank"><span
-                class="icon-facebook2"></span></a>
-            <a href="https://api.whatsapp.com/send?phone=5538999336995" class="social-item" target="_blank"><span
-                class="icon-whatsapp"></span></a>
-            <a href="https://www.instagram.com/jakson_reis/" class="social-item" target="_blank"><span
-                class="icon-instagram2"></span></a>
-            <a href="https://www.linkedin.com/in/jakson-reis-024b3b16a/" class="social-item" target="_blank"><span
-                class="icon-linkedin2"></span></a>
-            <a href="https://github.com/jaksonreis" class="social-item"><span class="icon-github"
-                target="_blank"></span></a>
-          </p>
+                    <div class="space-y-6">
+                        <div class="glass rounded-2xl p-6 border border-gray-800">
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="edu-degree font-bold text-lg">Bacharelado em Engenharia de Software</h3>
+                                <span class="text-sm text-gray-500">2020 - 2024</span>
+                            </div>
+                            <p class="text-blue-400 mb-2">Estácio</p>
+                            <p class="edu-degree-desc text-gray-400 text-sm">Formação completa em engenharia de software
+                                com foco em desenvolvimento de sistemas e gestão de projetos.</p>
+                        </div>
+
+                        <div class="glass rounded-2xl p-6 border border-gray-800">
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="edu-tech font-bold text-lg">Técnico em Desenvolvimento Web</h3>
+                                <span class="text-sm text-gray-500">2022 - 2024</span>
+                            </div>
+                            <p class="text-blue-400 mb-2">IFMG</p>
+                            <p class="edu-tech-desc text-gray-400 text-sm">Formação técnica em informática da internet e
+                                desenvolvimento web.</p>
+                        </div>
+
+                        <div class="glass rounded-2xl p-6 border border-gray-800">
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="edu-webdev font-bold text-lg">Web Developer</h3>
+                                <span class="text-sm text-gray-500">2020 - 2021</span>
+                            </div>
+                            <p class="text-purple-400 mb-2">Rocketseat</p>
+                            <p class="edu-webdev-desc text-gray-400 text-sm">Especialização em TypeScript, React, React
+                                Native, Node.js e SQL.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <h2 class="cert-title font-display text-3xl md:text-4xl font-bold mb-8">
+                        Certificações & <span class="text-gradient">Cursos</span>
+                    </h2>
+
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-center gap-4 p-4 rounded-xl glass border border-gray-800 hover:border-yellow-500/30 transition-colors">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-yellow-500/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="award" class="w-6 h-6 text-yellow-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="cert-js font-bold">JavaScript Algorithms and Data Structures</h3>
+                                <p class="text-gray-400 text-sm">freeCodeCamp</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-4 rounded-xl glass border border-gray-800 hover:border-blue-500/30 transition-colors">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="users" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="cert-agile font-bold">Métodos Ágeis - Do planejamento à entrega</h3>
+                                <p class="text-gray-400 text-sm">Descomplica</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 p-4 rounded-xl glass border border-gray-800 hover:border-green-500/30 transition-colors">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="code" class="w-6 h-6 text-green-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="cert-web font-bold">Desenvolvedor Web</h3>
+                                <p class="text-gray-400 text-sm">IFMG</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script>
-    // Função para abrir o modal com a imagem clicada e a descrição
-    function abrirModal(src, descricao) {
-      var modal = document.getElementById('myModal');
-      var modalImg = document.getElementById('modalImg');
-      var modalDescription = document.getElementById('modalDescription');
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="reveal">
+                <h2 class="contact-title font-display text-4xl md:text-5xl font-bold mb-6">
+                    Vamos <span class="text-gradient">Conversar</span>?
+                </h2>
+                <p class="contact-subtitle text-gray-400 text-lg mb-12 max-w-2xl mx-auto">
+                    Estou aberto a oportunidades internacionais onde possa contribuir para construir sistemas backend
+                    robustos e escaláveis.
+                </p>
 
-      modal.style.display = 'flex';
-      modalImg.src = src;
-      modalDescription.textContent = descricao;
-    }
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <a href="mailto:jakson.reis@hotmail.com"
+                        class="glass rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="mail" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                        <h3 class="font-semibold mb-1">Email</h3>
+                        <p class="text-gray-400 text-sm">jakson.reis@hotmail.com</p>
+                    </a>
 
-    // Fechar o modal quando se clica fora da imagem
-    var modal = document.getElementById('myModal');
-    modal.onclick = function () {
-      modal.style.display = 'none';
-    }
-  </script>
-  <script src="js/vendor/jquery.min.js"></script>
-  <script src="js/vendor/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/vendor/popper.min.js"></script>
-  <script src="js/vendor/bootstrap.min.js"></script>
+                    <a href="https://www.linkedin.com/in/jaksonreis" target="_blank"
+                        class="glass rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="linkedin" class="w-6 h-6 text-blue-400"></i>
+                        </div>
+                        <h3 class="font-semibold mb-1">LinkedIn</h3>
+                        <p class="text-gray-400 text-sm">/in/jaksonreis</p>
+                    </a>
 
-  <script src="js/vendor/jquery.easing.1.3.js"></script>
+                    <a href="https://wa.me/5538999336995" target="_blank"
+                        class="glass rounded-2xl p-6 border border-gray-800 hover:border-green-500/50 transition-all group">
+                        <div
+                            class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="message-circle" class="w-6 h-6 text-green-400"></i>
+                        </div>
+                        <h3 class="font-semibold mb-1">WhatsApp</h3>
+                        <p class="text-gray-400 text-sm">+55 38 99933-6995</p>
+                    </a>
+                </div>
 
-  <script src="js/vendor/jquery.stellar.min.js"></script>
-  <script src="js/vendor/jquery.waypoints.min.js"></script>
+                <div class="glass rounded-3xl p-8 border border-gray-800 inline-block">
+                    <div class="flex items-center gap-4">
+                        <div class="w-3 h-3 rounded-full bg-green-400 animate-pulse"></div>
+                        <span class="contact-available text-gray-300">Disponível para novos projetos e oportunidades
+                            remotas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-  <script src="js/custom.js"></script>
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-bold text-sm font-display">
+                    JR</div>
+                <span class="font-display font-bold">Jakson Reis</span>
+            </div>
 
-  <script>
+            <p class="footer-copy text-gray-500 text-sm">
+                © 2025 Jakson Reis. Todos os direitos reservados.
+            </p>
 
-    const debounce = function (func, wait, immediate) {
-      let timeout;
-      return function (...args) {
-        const context = this;
-        const later = function () {
-          timeout = null;
-          if (!immediate) func.apply(context, args);
+            <div class="flex gap-4">
+                <!-- <a href="https://github.com/jaksonreis" target="_blank"
+                    class="text-gray-400 hover:text-white transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a> -->
+                <a href="https://www.linkedin.com/in/jaksonreis" target="_blank"
+                    class="text-gray-400 hover:text-white transition-colors">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <a href="mailto:jakson.reis@hotmail.com" class="text-gray-400 hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a href="https://wa.me/5538999336995" target="_blank"
+                    class="text-gray-400 hover:text-green-400 transition-colors">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Translation Data
+        const translations = {
+            pt: {
+                nav: { home: "Início", about: "Sobre", experience: "Experiência", skills: "Skills", contact: "Contato" },
+                hero: {
+                    available: "Disponível para oportunidades",
+                    desc: "Especialista em <span class='text-white font-medium'>Python</span> & <span class='text-white font-medium'>Node.js</span>, construindo sistemas escaláveis, APIs de alta performance e arquiteturas cloud-native.",
+                    ctaPrimary: "Vamos conversar",
+                    ctaSecondary: "Ver experiências",
+                    stats: { years: "Anos Exp.", projects: "Projetos", companies: "Empresas" }
+                },
+                about: {
+                    title: "Sobre <span class='text-gradient'>Mim</span>",
+                    p1: "Sou um <strong class='text-white'>Senior Software Engineer</strong> com sólida experiência em desenvolvimento backend, construindo sistemas escaláveis e de alta disponibilidade usando Python e Node.js para resolver problemas reais de negócio.",
+                    p2: "Especializo-me em projetar e desenvolver <strong class='text-white'>APIs, microsserviços e soluções cloud-native</strong>, focando em performance, confiabilidade e arquitetura limpa. Tenho experiência em sistemas com alto volume de dados, integrações, automação e serviços distribuídos.",
+                    p3: "Trabalho bem com equipes distribuídas, comunicando-me claramente com stakeholders técnicos e não técnicos, assumindo responsabilidade desde o design até a produção.",
+                    cards: {
+                        backend: "Backend",
+                        backendDesc: "APIs robustas e microsserviços escaláveis",
+                        data: "Dados",
+                        dataDesc: "SQL & NoSQL, processamento em larga escala",
+                        cloud: "Cloud",
+                        cloudDesc: "Arquiteturas cloud-native e DevOps",
+                        auto: "Automação",
+                        autoDesc: "Pipelines e agentes inteligentes"
+                    }
+                },
+                experience: {
+                    title: "Experiência <span class='text-gradient'>Profissional</span>",
+                    subtitle: "Trajetória sólida em desenvolvimento de software, atuando em empresas de tecnologia e inovação.",
+                    current: "Atual",
+                    jobs: {
+                        senior: "Senior Software Engineer",
+                        backend: "Backend Software Engineer",
+                        fullstack: "Full Stack Software Engineer"
+                    },
+                    datasintese: {
+                        date: "Jun 2023 - Presente",
+                        duration: "2 anos 9 meses",
+                        items: [
+                            "Design e construção de sistemas backend escaláveis e APIs de alta disponibilidade para processamento de dados em larga escala",
+                            "Desenvolvimento de pipelines de extração de dados automatizados e agentes inteligentes usando Python",
+                            "Sistemas de biometria facial em alta escala, otimizados para performance e confiabilidade",
+                            "Gestão de infraestrutura, servidores, otimização de recursos e monitoramento em ambientes cloud"
+                        ]
+                    },
+                    planet: {
+                        date: "Jan 2023 - Abr 2024",
+                        duration: "1 ano 4 meses",
+                        items: [
+                            "Manutenção e evolução de sistemas de telefonia empresarial (PABX) e plataformas de comunicação",
+                            "Modernização de sistemas legados, migração de PHP para Node.js (NestJS) e TypeScript",
+                            "Desenvolvimento de interfaces web com React e aplicativos mobile com React Native",
+                            "Participação em discussões arquiteturais e refactoring para reduzir débito técnico"
+                        ]
+                    },
+                    moura: {
+                        date: "Jan 2021 - Dez 2022",
+                        duration: "2 anos",
+                        items: [
+                            "Desenvolvimento de plataforma de gestão logística para solicitação e rastreamento de entregas via mobile app",
+                            "Modelagem de dados, implementação de regras de negócio e desenvolvimento de REST APIs",
+                            "Redução de inconsistências de endereço e otimização de workflow operacional"
+                        ]
+                    }
+                },
+                skills: {
+                    title: "Habilidades & <span class='text-gradient'>Tecnologias</span>",
+                    subtitle: "Stack tecnológico moderno focado em performance, escalabilidade e boas práticas de desenvolvimento.",
+                    categories: {
+                        backend: "Backend",
+                        frontend: "Frontend",
+                        database: "Banco de Dados",
+                        devops: "DevOps & Cloud",
+                        arch: "Arquitetura",
+                        tools: "Ferramentas"
+                    }
+                },
+                education: {
+                    title: "Formação <span class='text-gradient'>Acadêmica</span>",
+                    degree: "Bacharelado em Engenharia de Software",
+                    degreeDesc: "Formação completa em engenharia de software com foco em desenvolvimento de sistemas e gestão de projetos.",
+                    tech: "Técnico em Desenvolvimento Web",
+                    techDesc: "Formação técnica em informática da internet e desenvolvimento web.",
+                    webdev: "Web Developer",
+                    webdevDesc: "Especialização em TypeScript, React, React Native, Node.js e SQL."
+                },
+                certifications: {
+                    title: "Certificações & <span class='text-gradient'>Cursos</span>",
+                    js: "JavaScript Algorithms and Data Structures",
+                    agile: "Métodos Ágeis - Do planejamento à entrega",
+                    web: "Desenvolvedor Web"
+                },
+                contact: {
+                    title: "Vamos <span class='text-gradient'>Conversar</span>?",
+                    subtitle: "Estou aberto a oportunidades internacionais onde possa contribuir para construir sistemas backend robustos e escaláveis.",
+                    available: "Disponível para novos projetos e oportunidades remotas"
+                },
+                footer: "Todos os direitos reservados."
+            },
+            en: {
+                nav: { home: "Home", about: "About", experience: "Experience", skills: "Skills", contact: "Contact" },
+                hero: {
+                    available: "Open to opportunities",
+                    desc: "Specialist in <span class='text-white font-medium'>Python</span> & <span class='text-white font-medium'>Node.js</span>, building scalable systems, high-performance APIs and cloud-native architectures.",
+                    ctaPrimary: "Let's talk",
+                    ctaSecondary: "View experience",
+                    stats: { years: "Years Exp.", projects: "Projects", companies: "Companies" }
+                },
+                about: {
+                    title: "About <span class='text-gradient'>Me</span>",
+                    p1: "I'm a <strong class='text-white'>Senior Software Engineer</strong> with solid experience in backend development, building scalable and high-availability systems using Python and Node.js to solve real business problems.",
+                    p2: "I specialize in designing and developing <strong class='text-white'>APIs, microservices and cloud-native solutions</strong>, focusing on performance, reliability and clean architecture. I have experience in systems with high data volume, integrations, automation and distributed services.",
+                    p3: "I work well with distributed teams, communicating clearly with technical and non-technical stakeholders, taking ownership from design to production.",
+                    cards: {
+                        backend: "Backend",
+                        backendDesc: "Robust APIs and scalable microservices",
+                        data: "Data",
+                        dataDesc: "SQL & NoSQL, large-scale processing",
+                        cloud: "Cloud",
+                        cloudDesc: "Cloud-native architectures and DevOps",
+                        auto: "Automation",
+                        autoDesc: "Pipelines and intelligent agents"
+                    }
+                },
+                experience: {
+                    title: "Professional <span class='text-gradient'>Experience</span>",
+                    subtitle: "Solid trajectory in software development, working in technology and innovation companies.",
+                    current: "Current",
+                    jobs: {
+                        senior: "Senior Software Engineer",
+                        backend: "Backend Software Engineer",
+                        fullstack: "Full Stack Software Engineer"
+                    },
+                    datasintese: {
+                        date: "Jun 2023 - Present",
+                        duration: "2 years 9 months",
+                        items: [
+                            "Design and construction of scalable backend systems and high-availability APIs for large-scale data processing",
+                            "Development of automated data extraction pipelines and intelligent agents using Python",
+                            "Large-scale facial biometrics systems, optimized for performance and reliability",
+                            "Infrastructure management, servers, resource optimization and monitoring in cloud environments"
+                        ]
+                    },
+                    planet: {
+                        date: "Jan 2023 - Apr 2024",
+                        duration: "1 year 4 months",
+                        items: [
+                            "Maintenance and evolution of enterprise telephony systems (PABX) and communication platforms",
+                            "Legacy systems modernization, migration from PHP to Node.js (NestJS) and TypeScript",
+                            "Development of web interfaces with React and mobile applications with React Native",
+                            "Participation in architectural discussions and refactoring to reduce technical debt"
+                        ]
+                    },
+                    moura: {
+                        date: "Jan 2021 - Dec 2022",
+                        duration: "2 years",
+                        items: [
+                            "Development of logistics management platform for requesting and tracking deliveries via mobile app",
+                            "Data modeling, business rules implementation and REST API development",
+                            "Reduction of address inconsistencies and optimization of operational workflow"
+                        ]
+                    }
+                },
+                skills: {
+                    title: "Skills & <span class='text-gradient'>Technologies</span>",
+                    subtitle: "Modern tech stack focused on performance, scalability and development best practices.",
+                    categories: {
+                        backend: "Backend",
+                        frontend: "Frontend",
+                        database: "Database",
+                        devops: "DevOps & Cloud",
+                        arch: "Architecture",
+                        tools: "Tools"
+                    }
+                },
+                education: {
+                    title: "Academic <span class='text-gradient'>Background</span>",
+                    degree: "Bachelor's in Software Engineering",
+                    degreeDesc: "Complete education in software engineering with focus on systems development and project management.",
+                    tech: "Technical Degree in Web Development",
+                    techDesc: "Technical education in internet computing and web development.",
+                    webdev: "Web Developer",
+                    webdevDesc: "Specialization in TypeScript, React, React Native, Node.js and SQL."
+                },
+                certifications: {
+                    title: "Certifications & <span class='text-gradient'>Courses</span>",
+                    js: "JavaScript Algorithms and Data Structures",
+                    agile: "Agile Methods - From planning to delivery",
+                    web: "Web Developer"
+                },
+                contact: {
+                    title: "Let's <span class='text-gradient'>Talk</span>?",
+                    subtitle: "I'm open to international opportunities where I can contribute to building robust and scalable backend systems.",
+                    available: "Available for new projects and remote opportunities"
+                },
+                footer: "All rights reserved."
+            }
         };
-        const callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-      };
-    };
 
-    const target = document.querySelectorAll(".test");
-    const animationClass = "animated";
-
-    function animeScroll() {
-      const windowTop = window.pageYOffset + (window.innerHeight * 3) / 4;
-      target.forEach(function (element) {
-        if (windowTop > element.offsetTop) {
-          element.classList.add(animationClass);
-          element.classList.remove("test");
-        } else {
-          element.classList.remove(animationClass);
+        // DETECTAR IDIOMA DA URL (hash)
+        function getLangFromURL() {
+            const hash = window.location.hash;
+            if (hash === '#en') return 'en';
+            if (hash === '#pt') return 'pt';
+            return 'pt'; // Padrão: Português
         }
-      });
-    }
 
-    animeScroll();
+        let currentLang = getLangFromURL();
 
-    if (target.length) {
-      window.addEventListener(
-        "scroll",
-        debounce(function () {
-          animeScroll();
-        }, 200)
-      );
-    }
-  </script>
+        function switchLanguage(lang) {
+            if (lang === currentLang) return;
 
-  <!-- Google Map -->
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    	<script src="js/google-map.js"></script> -->
+            // Atualizar URL com hash
+            window.location.hash = lang;
+            currentLang = lang;
+
+            const t = translations[lang];
+
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`btn-${lang}`).classList.add('active');
+            document.getElementById(`btn-${lang}-mobile`).classList.add('active');
+
+            // Fade effect
+            document.body.style.opacity = '0.8';
+
+            setTimeout(() => {
+                // Navigation
+                document.querySelector('.nav-home').textContent = t.nav.home;
+                document.querySelector('.nav-about').textContent = t.nav.about;
+                document.querySelector('.nav-experience').textContent = t.nav.experience;
+                document.querySelector('.nav-skills').textContent = t.nav.skills;
+                document.querySelector('.nav-contact').textContent = t.nav.contact;
+
+                // Hero
+                document.querySelector('.available-text').textContent = t.hero.available;
+                document.querySelector('.hero-desc').innerHTML = t.hero.desc;
+                document.querySelector('.cta-primary span').textContent = t.hero.ctaPrimary;
+                document.querySelector('.cta-secondary span').textContent = t.hero.ctaSecondary;
+                document.querySelector('.stat-years').textContent = t.hero.stats.years;
+                document.querySelector('.stat-projects').textContent = t.hero.stats.projects;
+                document.querySelector('.stat-companies').textContent = t.hero.stats.companies;
+
+                // About
+                document.querySelector('.about-title').innerHTML = t.about.title;
+                const aboutContent = document.querySelector('.about-content');
+                aboutContent.children[0].innerHTML = t.about.p1;
+                aboutContent.children[1].innerHTML = t.about.p2;
+                aboutContent.children[2].innerHTML = t.about.p3;
+
+                document.querySelector('.card-backend').textContent = t.about.cards.backend;
+                document.querySelector('.card-backend-desc').textContent = t.about.cards.backendDesc;
+                document.querySelector('.card-data').textContent = t.about.cards.data;
+                document.querySelector('.card-data-desc').textContent = t.about.cards.dataDesc;
+                document.querySelector('.card-cloud').textContent = t.about.cards.cloud;
+                document.querySelector('.card-cloud-desc').textContent = t.about.cards.cloudDesc;
+                document.querySelector('.card-auto').textContent = t.about.cards.auto;
+                document.querySelector('.card-auto-desc').textContent = t.about.cards.autoDesc;
+
+                // Experience
+                document.querySelector('.exp-title').innerHTML = t.experience.title;
+                document.querySelector('.exp-subtitle').textContent = t.experience.subtitle;
+                document.querySelector('.badge-current').textContent = t.experience.current;
+
+                document.querySelector('.job-title-senior').textContent = t.experience.jobs.senior;
+                document.querySelector('.job-title-backend').textContent = t.experience.jobs.backend;
+                document.querySelector('.job-title-fullstack').textContent = t.experience.jobs.fullstack;
+
+                // Datasíntese
+                document.querySelector('.date-datasintese').textContent = t.experience.datasintese.date;
+                document.querySelector('.duration-datasintese').textContent = t.experience.datasintese.duration;
+                document.querySelector('.exp-datasintese-1').textContent = t.experience.datasintese.items[0];
+                document.querySelector('.exp-datasintese-2').textContent = t.experience.datasintese.items[1];
+                document.querySelector('.exp-datasintese-3').textContent = t.experience.datasintese.items[2];
+                document.querySelector('.exp-datasintese-4').textContent = t.experience.datasintese.items[3];
+
+                // PlanetTech
+                document.querySelector('.date-planet').textContent = t.experience.planet.date;
+                document.querySelector('.duration-planet').textContent = t.experience.planet.duration;
+                document.querySelector('.exp-planet-1').textContent = t.experience.planet.items[0];
+                document.querySelector('.exp-planet-2').textContent = t.experience.planet.items[1];
+                document.querySelector('.exp-planet-3').textContent = t.experience.planet.items[2];
+                document.querySelector('.exp-planet-4').textContent = t.experience.planet.items[3];
+
+                // Moura
+                document.querySelector('.date-moura').textContent = t.experience.moura.date;
+                document.querySelector('.duration-moura').textContent = t.experience.moura.duration;
+                document.querySelector('.exp-moura-1').textContent = t.experience.moura.items[0];
+                document.querySelector('.exp-moura-2').textContent = t.experience.moura.items[1];
+                document.querySelector('.exp-moura-3').textContent = t.experience.moura.items[2];
+
+                // Skills
+                document.querySelector('.skills-title').innerHTML = t.skills.title;
+                document.querySelector('.skills-subtitle').textContent = t.skills.subtitle;
+                document.querySelector('.skill-cat-backend').textContent = t.skills.categories.backend;
+                document.querySelector('.skill-cat-frontend').textContent = t.skills.categories.frontend;
+                document.querySelector('.skill-cat-database').textContent = t.skills.categories.database;
+                document.querySelector('.skill-cat-devops').textContent = t.skills.categories.devops;
+                document.querySelector('.skill-cat-arch').textContent = t.skills.categories.arch;
+                document.querySelector('.skill-cat-tools').textContent = t.skills.categories.tools;
+
+                // Education
+                document.querySelector('.edu-title').innerHTML = t.education.title;
+                document.querySelector('.edu-degree').textContent = t.education.degree;
+                document.querySelector('.edu-degree-desc').textContent = t.education.degreeDesc;
+                document.querySelector('.edu-tech').textContent = t.education.tech;
+                document.querySelector('.edu-tech-desc').textContent = t.education.techDesc;
+                document.querySelector('.edu-webdev').textContent = t.education.webdev;
+                document.querySelector('.edu-webdev-desc').textContent = t.education.webdevDesc;
+
+                // Certifications
+                document.querySelector('.cert-title').innerHTML = t.certifications.title;
+                document.querySelector('.cert-js').textContent = t.certifications.js;
+                document.querySelector('.cert-agile').textContent = t.certifications.agile;
+                document.querySelector('.cert-web').textContent = t.certifications.web;
+
+                // Contact
+                document.querySelector('.contact-title').innerHTML = t.contact.title;
+                document.querySelector('.contact-subtitle').textContent = t.contact.subtitle;
+                document.querySelector('.contact-available').textContent = t.contact.available;
+
+                // Footer
+                document.querySelector('.footer-copy').textContent = `© ${new Date().getFullYear()} Jakson Reis. ${t.footer}`;
+
+                // Update HTML lang
+                document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en-US';
+
+                document.body.style.opacity = '1';
+            }, 200);
+        }
+
+        // INICIALIZAR NO IDIOMA CORRETO AO CARREGAR
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialLang = getLangFromURL();
+            if (initialLang === 'en') {
+                // Atualizar botões sem animação
+                document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+                document.getElementById('btn-en').classList.add('active');
+                document.getElementById('btn-en-mobile').classList.add('active');
+
+                // Aplicar traduções sem fade
+                const t = translations['en'];
+
+                // Navigation
+                document.querySelector('.nav-home').textContent = t.nav.home;
+                document.querySelector('.nav-about').textContent = t.nav.about;
+                document.querySelector('.nav-experience').textContent = t.nav.experience;
+                document.querySelector('.nav-skills').textContent = t.nav.skills;
+                document.querySelector('.nav-contact').textContent = t.nav.contact;
+
+                // Hero
+                document.querySelector('.available-text').textContent = t.hero.available;
+                document.querySelector('.hero-desc').innerHTML = t.hero.desc;
+                document.querySelector('.cta-primary span').textContent = t.hero.ctaPrimary;
+                document.querySelector('.cta-secondary span').textContent = t.hero.ctaSecondary;
+                document.querySelector('.stat-years').textContent = t.hero.stats.years;
+                document.querySelector('.stat-projects').textContent = t.hero.stats.projects;
+                document.querySelector('.stat-companies').textContent = t.hero.stats.companies;
+
+                // About
+                document.querySelector('.about-title').innerHTML = t.about.title;
+                const aboutContent = document.querySelector('.about-content');
+                aboutContent.children[0].innerHTML = t.about.p1;
+                aboutContent.children[1].innerHTML = t.about.p2;
+                aboutContent.children[2].innerHTML = t.about.p3;
+
+                document.querySelector('.card-backend').textContent = t.about.cards.backend;
+                document.querySelector('.card-backend-desc').textContent = t.about.cards.backendDesc;
+                document.querySelector('.card-data').textContent = t.about.cards.data;
+                document.querySelector('.card-data-desc').textContent = t.about.cards.dataDesc;
+                document.querySelector('.card-cloud').textContent = t.about.cards.cloud;
+                document.querySelector('.card-cloud-desc').textContent = t.about.cards.cloudDesc;
+                document.querySelector('.card-auto').textContent = t.about.cards.auto;
+                document.querySelector('.card-auto-desc').textContent = t.about.cards.autoDesc;
+
+                // Experience
+                document.querySelector('.exp-title').innerHTML = t.experience.title;
+                document.querySelector('.exp-subtitle').textContent = t.experience.subtitle;
+                document.querySelector('.badge-current').textContent = t.experience.current;
+
+                document.querySelector('.job-title-senior').textContent = t.experience.jobs.senior;
+                document.querySelector('.job-title-backend').textContent = t.experience.jobs.backend;
+                document.querySelector('.job-title-fullstack').textContent = t.experience.jobs.fullstack;
+
+                // Datasíntese
+                document.querySelector('.date-datasintese').textContent = t.experience.datasintese.date;
+                document.querySelector('.duration-datasintese').textContent = t.experience.datasintese.duration;
+                document.querySelector('.exp-datasintese-1').textContent = t.experience.datasintese.items[0];
+                document.querySelector('.exp-datasintese-2').textContent = t.experience.datasintese.items[1];
+                document.querySelector('.exp-datasintese-3').textContent = t.experience.datasintese.items[2];
+                document.querySelector('.exp-datasintese-4').textContent = t.experience.datasintese.items[3];
+
+                // PlanetTech
+                document.querySelector('.date-planet').textContent = t.experience.planet.date;
+                document.querySelector('.duration-planet').textContent = t.experience.planet.duration;
+                document.querySelector('.exp-planet-1').textContent = t.experience.planet.items[0];
+                document.querySelector('.exp-planet-2').textContent = t.experience.planet.items[1];
+                document.querySelector('.exp-planet-3').textContent = t.experience.planet.items[2];
+                document.querySelector('.exp-planet-4').textContent = t.experience.planet.items[3];
+
+                // Moura
+                document.querySelector('.date-moura').textContent = t.experience.moura.date;
+                document.querySelector('.duration-moura').textContent = t.experience.moura.duration;
+                document.querySelector('.exp-moura-1').textContent = t.experience.moura.items[0];
+                document.querySelector('.exp-moura-2').textContent = t.experience.moura.items[1];
+                document.querySelector('.exp-moura-3').textContent = t.experience.moura.items[2];
+
+                // Skills
+                document.querySelector('.skills-title').innerHTML = t.skills.title;
+                document.querySelector('.skills-subtitle').textContent = t.skills.subtitle;
+                document.querySelector('.skill-cat-backend').textContent = t.skills.categories.backend;
+                document.querySelector('.skill-cat-frontend').textContent = t.skills.categories.frontend;
+                document.querySelector('.skill-cat-database').textContent = t.skills.categories.database;
+                document.querySelector('.skill-cat-devops').textContent = t.skills.categories.devops;
+                document.querySelector('.skill-cat-arch').textContent = t.skills.categories.arch;
+                document.querySelector('.skill-cat-tools').textContent = t.skills.categories.tools;
+
+                // Education
+                document.querySelector('.edu-title').innerHTML = t.education.title;
+                document.querySelector('.edu-degree').textContent = t.education.degree;
+                document.querySelector('.edu-degree-desc').textContent = t.education.degreeDesc;
+                document.querySelector('.edu-tech').textContent = t.education.tech;
+                document.querySelector('.edu-tech-desc').textContent = t.education.techDesc;
+                document.querySelector('.edu-webdev').textContent = t.education.webdev;
+                document.querySelector('.edu-webdev-desc').textContent = t.education.webdevDesc;
+
+                // Certifications
+                document.querySelector('.cert-title').innerHTML = t.certifications.title;
+                document.querySelector('.cert-js').textContent = t.certifications.js;
+                document.querySelector('.cert-agile').textContent = t.certifications.agile;
+                document.querySelector('.cert-web').textContent = t.certifications.web;
+
+                // Contact
+                document.querySelector('.contact-title').innerHTML = t.contact.title;
+                document.querySelector('.contact-subtitle').textContent = t.contact.subtitle;
+                document.querySelector('.contact-available').textContent = t.contact.available;
+
+                // Footer
+                document.querySelector('.footer-copy').textContent = `© ${new Date().getFullYear()} Jakson Reis. ${t.footer}`;
+
+                // Update HTML lang
+                document.documentElement.lang = 'en-US';
+            }
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // CORREÇÃO: Navbar scroll effect sem linha branca
+        let lastScroll = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                // Fora do topo - fundo sólido escuro
+                navbar.classList.remove('navbar-top');
+                navbar.classList.add('navbar-solid');
+            } else {
+                // No topo - transparente sem borda
+                navbar.classList.remove('navbar-solid');
+                navbar.classList.add('navbar-top');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
