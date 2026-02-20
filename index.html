@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jakson Reis | Senior Software Engineer</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com "></script>
+    <script src="https://unpkg.com/lucide@latest "></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com ">
+    <link rel="preconnect" href="https://fonts.gstatic.com " crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300 ;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
     <script>
@@ -203,6 +203,9 @@
                         class="nav-experience text-gray-300 hover:text-white transition-colors text-sm font-medium">Experiência</a>
                     <a href="#skills"
                         class="nav-skills text-gray-300 hover:text-white transition-colors text-sm font-medium">Skills</a>
+                    <a href="#projects"
+                        class="nav-projects text-gray-300 hover:text-white transition-colors text-sm font-medium">Projetos</a>
+
                     <a href="#contact"
                         class="nav-contact px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-all hover:shadow-lg hover:shadow-blue-500/25">Contato</a>
 
@@ -232,12 +235,13 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden navbar-solid border-t border-gray-800">
             <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="#home" class="nav-home block px-3 py-2 text-gray-300 hover:text-white">Início</a>
-                <a href="#about" class="nav-about block px-3 py-2 text-gray-300 hover:text-white">Sobre</a>
+                <a href="#home" class="nav-home-mobile block px-3 py-2 text-gray-300 hover:text-white">Início</a>
+                <a href="#about" class="nav-about-mobile block px-3 py-2 text-gray-300 hover:text-white">Sobre</a>
                 <a href="#experience"
-                    class="nav-experience block px-3 py-2 text-gray-300 hover:text-white">Experiência</a>
-                <a href="#skills" class="nav-skills block px-3 py-2 text-gray-300 hover:text-white">Skills</a>
-                <a href="#contact" class="nav-contact block px-3 py-2 text-blue-400">Contato</a>
+                    class="nav-experience-mobile block px-3 py-2 text-gray-300 hover:text-white">Experiência</a>
+                <a href="#skills" class="nav-skills-mobile block px-3 py-2 text-gray-300 hover:text-white">Skills</a>
+                <a href="#projects" class="nav-projects-mobile block px-3 py-2 text-gray-300 hover:text-white">Projetos</a>
+                <a href="#contact" class="nav-contact-mobile block px-3 py-2 text-blue-400">Contato</a>
             </div>
         </div>
     </nav>
@@ -738,6 +742,508 @@
             </div>
         </div>
     </section>
+
+    <!-- Projects Section - ADICIONAR DEPOIS DA SEÇÃO DE SKILLS -->
+    <section id="projects" class="py-32 relative bg-gray-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <h2 class="projects-title font-display text-4xl md:text-5xl font-bold mb-6">
+                    Projetos <span class="text-gradient">Destacados</span>
+                </h2>
+                <p class="projects-subtitle text-gray-400 text-lg max-w-2xl mx-auto">
+                    Sistemas complexos e soluções de alta performance desenvolvidos em ambientes de produção.
+                </p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Project 1: Multi-Agent AI -->
+                <div class="reveal group">
+                    <div
+                        class="glass rounded-3xl p-8 md:p-10 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 overflow-hidden relative">
+                        <div
+                            class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all">
+                        </div>
+
+                        <div class="relative z-10">
+                            <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-6">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                                            <i data-lucide="bot" class="w-6 h-6 text-blue-400"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="project-ai-title font-display text-2xl font-bold text-white">
+                                                Multi-Agent AI Data Intelligence Platform</h3>
+                                            <span class="text-blue-400 text-sm font-medium">2023 • Enterprise
+                                                SaaS</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="project-ai-desc text-gray-400 text-lg leading-relaxed mb-6">
+                                        Sistema enterprise de agentes de IA no WhatsApp Business API, integrando banco
+                                        Oracle proprietário com fontes externas para queries complexas e relatórios PDF
+                                        automatizados.
+                                    </p>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2 lg:w-72">
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 text-xs border border-blue-500/20">Node.js</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-green-500/10 text-green-300 text-xs border border-green-500/20">WhatsApp
+                                        API</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 text-xs border border-purple-500/20">OpenAI
+                                        GPT</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-300 text-xs border border-orange-500/20">Oracle
+                                        DB</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-pink-500/10 text-pink-300 text-xs border border-pink-500/20">Microservices</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-300 text-xs border border-yellow-500/20">OCR</span>
+                                </div>
+                            </div>
+
+                            <!-- Expandable Details -->
+                            <div class="grid md:grid-cols-2 gap-6 mt-6 pt-6 border-t border-gray-800">
+                                <div>
+                                    <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+                                        <i data-lucide="database" class="w-4 h-4 text-blue-400"></i>
+                                        <span class="project-ai-data-title">Arquitetura de Dados</span>
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-400 text-sm">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-blue-500 mt-1">•</span>
+                                            <span class="project-ai-data-1">Banco Oracle com datasets curados
+                                                (endereços, contatos, registros profissionais, dados veiculares)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-blue-500 mt-1">•</span>
+                                            <span class="project-ai-data-2">Integração real-time com APIs externas (CPF,
+                                                CNPJ, registros públicos)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-blue-500 mt-1">•</span>
+                                            <span class="project-ai-data-3">Abordagem híbrida: dados internos +
+                                                enriquecimento externo</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+                                        <i data-lucide="cpu" class="w-4 h-4 text-purple-400"></i>
+                                        <span class="project-ai-agents-title">Sistema Multi-Agente</span>
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-400 text-sm">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-purple-500 mt-1">•</span>
+                                            <span class="project-ai-agent-1"><strong>Master Agent</strong> - orquestra
+                                                requisições e delega a sub-agentes especializados</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-purple-500 mt-1">•</span>
+                                            <span class="project-ai-agent-2"><strong>Template Agent</strong> - configura
+                                                temas PDF customizados por empresa</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-purple-500 mt-1">•</span>
+                                            <span class="project-ai-agent-3"><strong>People/Company/Relationship/Vehicle
+                                                    Agents</strong> - busca inteligente multi-fonte</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-purple-500 mt-1">•</span>
+                                            <span class="project-ai-agent-4"><strong>Document/Audio Agents</strong> -
+                                                OCR e transcrição speech-to-text</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 flex items-center gap-4 text-sm text-gray-500">
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                                    <span class="project-ai-feature-1">Processamento multi-modal</span>
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                                    <span class="project-ai-feature-2">Geração dinâmica de PDFs</span>
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-green-400"></i>
+                                    <span class="project-ai-feature-3">Arquitetura escalável</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Government Data Scraping -->
+                <div class="reveal group" style="transition-delay: 100ms;">
+                    <div
+                        class="glass rounded-3xl p-8 md:p-10 border border-gray-800 hover:border-green-500/50 transition-all duration-500 overflow-hidden relative">
+                        <div
+                            class="absolute top-0 right-0 w-96 h-96 bg-green-500/10 rounded-full blur-3xl group-hover:bg-green-500/20 transition-all">
+                        </div>
+
+                        <div class="relative z-10">
+                            <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-6">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+                                            <i data-lucide="shield" class="w-6 h-6 text-green-400"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="project-gov-title font-display text-2xl font-bold text-white">
+                                                Government Data Scraping & Automation Platform</h3>
+                                            <span class="text-green-400 text-sm font-medium">2025 • Data
+                                                Extraction</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="project-gov-desc text-gray-400 text-lg leading-relaxed mb-6">
+                                        Sistemas automatizados de extração de dados para consulta a bases públicas
+                                        governamentais em tempo real, incluindo processos judiciais e validação de
+                                        status fiscal federal.
+                                    </p>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2 lg:w-72">
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-300 text-xs border border-yellow-500/20">Python</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 text-xs border border-blue-500/20">Selenium</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 text-xs border border-purple-500/20">Playwright</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-300 text-xs border border-orange-500/20">FastAPI</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-pink-500/10 text-pink-300 text-xs border border-pink-500/20">Proxy
+                                        Rotation</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-red-500/10 text-red-300 text-xs border border-red-500/20">CAPTCHA
+                                        Handling</span>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6 mt-6 pt-6 border-t border-gray-800">
+                                <div class="md:col-span-2">
+                                    <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+                                        <i data-lucide="server" class="w-4 h-4 text-green-400"></i>
+                                        <span class="project-gov-sources-title">Fontes de Dados Integradas</span>
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-400 text-sm">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-green-500 mt-1">•</span>
+                                            <span class="project-gov-source-1"><strong>Tribunal de Justiça</strong> -
+                                                consulta automatizada de processos e status de casos</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-green-500 mt-1">•</span>
+                                            <span class="project-gov-source-2"><strong>Receita Federal</strong> -
+                                                validação de status CPF e regularização em tempo real</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-green-500 mt-1">•</span>
+                                            <span class="project-gov-source-3">Integração com serviços de resolução de
+                                                CAPTCHA para automação contínua</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+                                        <i data-lucide="wrench" class="w-4 h-4 text-orange-400"></i>
+                                        <span class="project-gov-challenges-title">Desafios Técnicos</span>
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-400 text-sm">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-orange-500 mt-1">•</span>
+                                            <span class="project-gov-challenge-1">Gestão de sessões e persistência de
+                                                cookies</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-orange-500 mt-1">•</span>
+                                            <span class="project-gov-challenge-2">Handling de conteúdo dinâmico
+                                                (JS-rendered)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-orange-500 mt-1">•</span>
+                                            <span class="project-gov-challenge-3">Normalização de dados de HTML
+                                                inconsistente</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 flex items-center gap-4 text-sm text-gray-500">
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
+                                    <span class="project-gov-feature-1">Extração real-time</span>
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
+                                    <span class="project-gov-feature-2">Output JSON estruturado</span>
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
+                                    <span class="project-gov-feature-3">Rate limiting & compliance</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Automated Sales Platform -->
+                <div class="reveal group" style="transition-delay: 200ms;">
+                    <div
+                        class="glass rounded-3xl p-8 md:p-10 border border-gray-800 hover:border-purple-500/50 transition-all duration-500 overflow-hidden relative">
+                        <div
+                            class="absolute top-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all">
+                        </div>
+
+                        <div class="relative z-10">
+                            <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-6">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                                            <i data-lucide="shopping-cart" class="w-6 h-6 text-purple-400"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="project-sales-title font-display text-2xl font-bold text-white">
+                                                Automated Info Product Sales Platform</h3>
+                                            <span class="text-purple-400 text-sm font-medium">2024 • E-commerce
+                                                Automation</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="project-sales-desc text-gray-400 text-lg leading-relaxed mb-6">
+                                        Plataforma de vendas automatizadas processando 3.000+ transações mensais,
+                                        integrando Telegram Bot API com gateway Efí Bank para entrega instantânea de
+                                        produtos digitais.
+                                    </p>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2 lg:w-72">
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 text-xs border border-blue-500/20">Node.js</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-xs border border-indigo-500/20">PostgreSQL</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-red-500/10 text-red-300 text-xs border border-red-500/20">Redis</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs border border-cyan-500/20">Telegram
+                                        API</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-green-500/10 text-green-300 text-xs border border-green-500/20">Payment
+                                        Gateway</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-300 text-xs border border-yellow-500/20">Webhooks</span>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6 mt-6 pt-6 border-t border-gray-800">
+                                <div class="bg-purple-500/5 rounded-2xl p-4 border border-purple-500/10">
+                                    <div class="text-3xl font-bold text-purple-400 font-display mb-1">3.000+</div>
+                                    <div class="project-sales-stat-1 text-gray-400 text-sm">vendas automatizadas/mês
+                                    </div>
+                                </div>
+                                <div class="bg-purple-500/5 rounded-2xl p-4 border border-purple-500/10">
+                                    <div class="text-3xl font-bold text-green-400 font-display mb-1">100%</div>
+                                    <div class="project-sales-stat-2 text-gray-400 text-sm">redução em operações manuais
+                                    </div>
+                                </div>
+                                <div class="bg-purple-500/5 rounded-2xl p-4 border border-purple-500/10">
+                                    <div class="text-3xl font-bold text-blue-400 font-display mb-1">&lt;5s</div>
+                                    <div class="project-sales-stat-3 text-gray-400 text-sm">entrega end-to-end</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+                                        <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
+                                        <span class="project-sales-features-title">Funcionalidades Principais</span>
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-400 text-sm">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-purple-500 mt-1">•</span>
+                                            <span class="project-sales-feature-1">Interface Telegram bot para
+                                                experiência seamless do cliente</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-purple-500 mt-1">•</span>
+                                            <span class="project-sales-feature-2">Geração automatizada de links de
+                                                pagamento (Pix e cartão)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-purple-500 mt-1">•</span>
+                                            <span class="project-sales-feature-3">Processamento real-time de webhooks
+                                                para validação instantânea</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+                                        <i data-lucide="code-2" class="w-4 h-4 text-blue-400"></i>
+                                        <span class="project-sales-tech-title">Highlights Técnicos</span>
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-400 text-sm">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-blue-500 mt-1">•</span>
+                                            <span class="project-sales-tech-1">Arquitetura event-driven para
+                                                processamento real-time</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-blue-500 mt-1">•</span>
+                                            <span class="project-sales-tech-2">Processamento idempotente prevenindo
+                                                cobranças duplicadas</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-blue-500 mt-1">•</span>
+                                            <span class="project-sales-tech-3">Redis caching para tempos de resposta
+                                                sub-segundo</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Facial Recognition -->
+                <div class="reveal group" style="transition-delay: 300ms;">
+                    <div
+                        class="glass rounded-3xl p-8 md:p-10 border border-gray-800 hover:border-pink-500/50 transition-all duration-500 overflow-hidden relative">
+                        <div
+                            class="absolute top-0 right-0 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl group-hover:bg-pink-500/20 transition-all">
+                        </div>
+
+                        <div class="relative z-10">
+                            <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-6">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center">
+                                            <i data-lucide="scan-face" class="w-6 h-6 text-pink-400"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="project-face-title font-display text-2xl font-bold text-white">
+                                                Facial Recognition Access Control System</h3>
+                                            <span class="text-pink-400 text-sm font-medium">2023 • Computer
+                                                Vision</span>
+                                        </div>
+                                    </div>
+
+                                    <p class="project-face-desc text-gray-400 text-lg leading-relaxed mb-6">
+                                        Sistema de reconhecimento facial para controle de acesso seguro em edifícios
+                                        corporativos e condomínios residenciais. Captura faces via câmera, compara
+                                        contra identidades registradas e libera ou nega entrada em tempo real.
+                                    </p>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2 lg:w-72">
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-300 text-xs border border-yellow-500/20">Python</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 text-xs border border-blue-500/20">OpenCV</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-xs border border-indigo-500/20">Face
+                                        Recognition</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-green-500/10 text-green-300 text-xs border border-green-500/20">FastAPI</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-300 text-xs border border-orange-500/20">PostgreSQL</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs border border-cyan-500/20">Docker</span>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6 mt-6 pt-6 border-t border-gray-800">
+                                <div>
+                                    <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+                                        <i data-lucide="scan" class="w-4 h-4 text-pink-400"></i>
+                                        <span class="project-face-features-title">Funcionalidades</span>
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-400 text-sm">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-pink-500 mt-1">•</span>
+                                            <span class="project-face-feature-1">Detecção e reconhecimento facial em
+                                                tempo real usando computer vision</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-pink-500 mt-1">•</span>
+                                            <span class="project-face-feature-2">Banco seguro de faces registradas com
+                                                storage criptografado</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-pink-500 mt-1">•</span>
+                                            <span class="project-face-feature-3">Algoritmo otimizado de matching para
+                                                fluxo rápido de entrada/saída</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-pink-500 mt-1">•</span>
+                                            <span class="project-face-feature-4">Dashboard web para gestão de pessoal
+                                                autorizado</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+                                        <i data-lucide="shield-check" class="w-4 h-4 text-green-400"></i>
+                                        <span class="project-face-security-title">Segurança & Performance</span>
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-400 text-sm">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-green-500 mt-1">•</span>
+                                            <span class="project-face-security-1">Processamento de imagem otimizado para
+                                                latência &lt; 2 segundos</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-green-500 mt-1">•</span>
+                                            <span class="project-face-security-2">Handling de variações de iluminação e
+                                                ângulos de câmera</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-green-500 mt-1">•</span>
+                                            <span class="project-face-security-3">Liveness detection para prevenir
+                                                ataques de spoofing por foto</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-green-500 mt-1">•</span>
+                                            <span class="project-face-security-4">Logs de auditoria de todas as
+                                                tentativas de acesso</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 flex items-center gap-4 text-sm text-gray-500">
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-4 h-4 text-pink-400"></i>
+                                    <span class="project-face-stat-1">Latência &lt; 2s</span>
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="shield" class="w-4 h-4 text-pink-400"></i>
+                                    <span class="project-face-stat-2">Anti-spoofing</span>
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="eye" class="w-4 h-4 text-pink-400"></i>
+                                    <span class="project-face-stat-3">Auditoria completa</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Education & Certs -->
     <section class="py-32 relative bg-gray-900/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -850,7 +1356,7 @@
                         <p class="text-gray-400 text-sm">jakson.reis@hotmail.com</p>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/jaksonreis" target="_blank"
+                    <a href="https://www.linkedin.com/in/jaksonreis " target="_blank"
                         class="glass rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all group">
                         <div
                             class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
@@ -860,7 +1366,7 @@
                         <p class="text-gray-400 text-sm">/in/jaksonreis</p>
                     </a>
 
-                    <a href="https://wa.me/5538999336995" target="_blank"
+                    <a href="https://wa.me/5538999336995 " target="_blank"
                         class="glass rounded-2xl p-6 border border-gray-800 hover:border-green-500/50 transition-all group">
                         <div
                             class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
@@ -898,18 +1404,18 @@
             </p>
 
             <div class="flex gap-4">
-                <!-- <a href="https://github.com/jaksonreis" target="_blank"
+                <!-- <a href="https://github.com/jaksonreis " target="_blank"
                     class="text-gray-400 hover:text-white transition-colors">
                     <i data-lucide="github" class="w-5 h-5"></i>
                 </a> -->
-                <a href="https://www.linkedin.com/in/jaksonreis" target="_blank"
+                <a href="https://www.linkedin.com/in/jaksonreis " target="_blank"
                     class="text-gray-400 hover:text-white transition-colors">
                     <i data-lucide="linkedin" class="w-5 h-5"></i>
                 </a>
                 <a href="mailto:jakson.reis@hotmail.com" class="text-gray-400 hover:text-white transition-colors">
                     <i data-lucide="mail" class="w-5 h-5"></i>
                 </a>
-                <a href="https://wa.me/5538999336995" target="_blank"
+                <a href="https://wa.me/5538999336995 " target="_blank"
                     class="text-gray-400 hover:text-green-400 transition-colors">
                     <i data-lucide="message-circle" class="w-5 h-5"></i>
                 </a>
@@ -921,7 +1427,7 @@
         // Translation Data
         const translations = {
             pt: {
-                nav: { home: "Início", about: "Sobre", experience: "Experiência", skills: "Skills", contact: "Contato" },
+                nav: { home: "Início", about: "Sobre", experience: "Experiência", skills: "Skills", projects: "Projetos", contact: "Contato" },
                 hero: {
                     available: "Disponível para oportunidades",
                     desc: "Especialista em <span class='text-white font-medium'>Python</span> & <span class='text-white font-medium'>Node.js</span>, construindo sistemas escaláveis, APIs de alta performance e arquiteturas cloud-native.",
@@ -996,6 +1502,73 @@
                         tools: "Ferramentas"
                     }
                 },
+                projects: {
+                    title: "Projetos <span class='text-gradient'>Destacados</span>",
+                    subtitle: "Sistemas complexos e soluções de alta performance desenvolvidos em ambientes de produção.",
+                    ai: {
+                        title: "Multi-Agent AI Data Intelligence Platform",
+                        desc: "Sistema enterprise de agentes de IA no WhatsApp Business API, integrando banco Oracle proprietário com fontes externas para queries complexas e relatórios PDF automatizados.",
+                        dataTitle: "Arquitetura de Dados",
+                        data1: "Banco Oracle com datasets curados (endereços, contatos, registros profissionais, dados veiculares)",
+                        data2: "Integração real-time com APIs externas (CPF, CNPJ, registros públicos)",
+                        data3: "Abordagem híbrida: dados internos + enriquecimento externo",
+                        agentsTitle: "Sistema Multi-Agente",
+                        agent1: "Master Agent - orquestra requisições e delega a sub-agentes especializados",
+                        agent2: "Template Agent - configura temas PDF customizados por empresa",
+                        agent3: "People/Company/Relationship/Vehicle Agents - busca inteligente multi-fonte",
+                        agent4: "Document/Audio Agents - OCR e transcrição speech-to-text",
+                        feature1: "Processamento multi-modal",
+                        feature2: "Geração dinâmica de PDFs",
+                        feature3: "Arquitetura escalável"
+                    },
+                    gov: {
+                        title: "Government Data Scraping & Automation Platform",
+                        desc: "Sistemas automatizados de extração de dados para consulta a bases públicas governamentais em tempo real, incluindo processos judiciais e validação de status fiscal federal.",
+                        sourcesTitle: "Fontes de Dados Integradas",
+                        source1: "Tribunal de Justiça - consulta automatizada de processos e status de casos",
+                        source2: "Receita Federal - validação de status CPF e regularização em tempo real",
+                        source3: "Integração com serviços de resolução de CAPTCHA para automação contínua",
+                        challengesTitle: "Desafios Técnicos",
+                        challenge1: "Gestão de sessões e persistência de cookies",
+                        challenge2: "Handling de conteúdo dinâmico (JS-rendered)",
+                        challenge3: "Normalização de dados de HTML inconsistente",
+                        feature1: "Extração real-time",
+                        feature2: "Output JSON estruturado",
+                        feature3: "Rate limiting & compliance"
+                    },
+                    sales: {
+                        title: "Automated Info Product Sales Platform",
+                        desc: "Plataforma de vendas automatizadas processando 3.000+ transações mensais, integrando Telegram Bot API com gateway Efí Bank para entrega instantânea de produtos digitais.",
+                        stat1: "vendas automatizadas/mês",
+                        stat2: "redução em operações manuais",
+                        stat3: "entrega end-to-end",
+                        featuresTitle: "Funcionalidades Principais",
+                        feature1: "Interface Telegram bot para experiência seamless do cliente",
+                        feature2: "Geração automatizada de links de pagamento (Pix e cartão)",
+                        feature3: "Processamento real-time de webhooks para validação instantânea",
+                        techTitle: "Highlights Técnicos",
+                        tech1: "Arquitetura event-driven para processamento real-time",
+                        tech2: "Processamento idempotente prevenindo cobranças duplicadas",
+                        tech3: "Redis caching para tempos de resposta sub-segundo"
+                    },
+                    face: {
+                        title: "Facial Recognition Access Control System",
+                        desc: "Sistema de reconhecimento facial para controle de acesso seguro em edifícios corporativos e condomínios residenciais. Captura faces via câmera, compara contra identidades registradas e libera ou nega entrada em tempo real.",
+                        featuresTitle: "Funcionalidades",
+                        feature1: "Detecção e reconhecimento facial em tempo real usando computer vision",
+                        feature2: "Banco seguro de faces registradas com storage criptografado",
+                        feature3: "Algoritmo otimizado de matching para fluxo rápido de entrada/saída",
+                        feature4: "Dashboard web para gestão de pessoal autorizado",
+                        securityTitle: "Segurança & Performance",
+                        security1: "Processamento de imagem otimizado para latência < 2 segundos",
+                        security2: "Handling de variações de iluminação e ângulos de câmera",
+                        security3: "Liveness detection para prevenir ataques de spoofing por foto",
+                        security4: "Logs de auditoria de todas as tentativas de acesso",
+                        stat1: "Latência < 2s",
+                        stat2: "Anti-spoofing",
+                        stat3: "Auditoria completa"
+                    }
+                },
                 education: {
                     title: "Formação <span class='text-gradient'>Acadêmica</span>",
                     degree: "Bacharelado em Engenharia de Software",
@@ -1019,7 +1592,7 @@
                 footer: "Todos os direitos reservados."
             },
             en: {
-                nav: { home: "Home", about: "About", experience: "Experience", skills: "Skills", contact: "Contact" },
+                nav: { home: "Home", about: "About", experience: "Experience", skills: "Skills", projects: "Projects", contact: "Contact" },
                 hero: {
                     available: "Open to opportunities",
                     desc: "Specialist in <span class='text-white font-medium'>Python</span> & <span class='text-white font-medium'>Node.js</span>, building scalable systems, high-performance APIs and cloud-native architectures.",
@@ -1094,6 +1667,73 @@
                         tools: "Tools"
                     }
                 },
+                projects: {
+                    title: "Featured <span class='text-gradient'>Projects</span>",
+                    subtitle: "Complex systems and high-performance solutions built in production environments.",
+                    ai: {
+                        title: "Multi-Agent AI Data Intelligence Platform",
+                        desc: "Enterprise-grade AI agent system on WhatsApp Business API, integrating proprietary Oracle database with external sources for complex queries and automated PDF reporting.",
+                        dataTitle: "Data Architecture",
+                        data1: "Oracle database with curated datasets (addresses, contacts, professional records, vehicle data)",
+                        data2: "Real-time integration with external APIs (CPF, CNPJ, public records)",
+                        data3: "Hybrid approach: internal data + external enrichment",
+                        agentsTitle: "Multi-Agent System",
+                        agent1: "Master Agent - orchestrates requests and delegates to specialized sub-agents",
+                        agent2: "Template Agent - configures custom PDF themes per company/institution",
+                        agent3: "People/Company/Relationship/Vehicle Agents - multi-source intelligent search",
+                        agent4: "Document/Audio Agents - OCR and speech-to-text transcription",
+                        feature1: "Multi-modal processing",
+                        feature2: "Dynamic PDF generation",
+                        feature3: "Scalable architecture"
+                    },
+                    gov: {
+                        title: "Government Data Scraping & Automation Platform",
+                        desc: "Automated data extraction systems for querying public government databases in real-time, including court records and federal tax status verification.",
+                        sourcesTitle: "Integrated Data Sources",
+                        source1: "Tribunal de Justiça - automated process and case status lookup",
+                        source2: "Receita Federal - real-time CPF status and registration validation",
+                        source3: "CAPTCHA-solving service integration for seamless automation",
+                        challengesTitle: "Technical Challenges",
+                        challenge1: "Session management and cookie persistence",
+                        challenge2: "Dynamic content handling (JS-rendered pages)",
+                        challenge3: "Data normalization from inconsistent HTML structures",
+                        feature1: "Real-time extraction",
+                        feature2: "Structured JSON output",
+                        feature3: "Rate limiting & compliance"
+                    },
+                    sales: {
+                        title: "Automated Info Product Sales Platform",
+                        desc: "Automated sales platform processing 3,000+ monthly transactions, integrating Telegram Bot API with Efí Bank payment gateway for instant digital product delivery.",
+                        stat1: "automated sales/month",
+                        stat2: "reduction in manual operations",
+                        stat3: "end-to-end delivery",
+                        featuresTitle: "Key Features",
+                        feature1: "Telegram bot interface for seamless customer experience",
+                        feature2: "Automated payment link generation (Pix and credit card)",
+                        feature3: "Real-time webhook processing for instant validation",
+                        techTitle: "Technical Highlights",
+                        tech1: "Event-driven architecture for real-time processing",
+                        tech2: "Idempotent payment processing preventing duplicate charges",
+                        tech3: "Redis caching for sub-second response times"
+                    },
+                    face: {
+                        title: "Facial Recognition Access Control System",
+                        desc: "Facial recognition system for secure access control in corporate buildings and residential condominiums. Captures faces via camera, compares against registered identities, and grants/denies entry in real-time.",
+                        featuresTitle: "Key Features",
+                        feature1: "Real-time face detection and recognition using computer vision",
+                        feature2: "Secure database of registered faces with encrypted storage",
+                        feature3: "Optimized matching algorithm for fast entry/exit flow",
+                        feature4: "Web dashboard for managing authorized personnel",
+                        securityTitle: "Security & Performance",
+                        security1: "Optimized image processing for < 2 seconds latency",
+                        security2: "Handling varying lighting conditions and camera angles",
+                        security3: "Liveness detection to prevent photo spoofing attacks",
+                        security4: "Audit logs of all access attempts",
+                        stat1: "Latency < 2s",
+                        stat2: "Anti-spoofing",
+                        stat3: "Full audit"
+                    }
+                },
                 education: {
                     title: "Academic <span class='text-gradient'>Background</span>",
                     degree: "Bachelor's in Software Engineering",
@@ -1148,12 +1788,21 @@
             document.body.style.opacity = '0.8';
 
             setTimeout(() => {
-                // Navigation
+                // Navigation - CORREÇÃO: Atualizar desktop E mobile separadamente
                 document.querySelector('.nav-home').textContent = t.nav.home;
                 document.querySelector('.nav-about').textContent = t.nav.about;
                 document.querySelector('.nav-experience').textContent = t.nav.experience;
                 document.querySelector('.nav-skills').textContent = t.nav.skills;
                 document.querySelector('.nav-contact').textContent = t.nav.contact;
+                document.querySelector('.nav-projects').textContent = t.nav.projects;
+                
+                // Mobile navigation - CORREÇÃO: Classes separadas para mobile
+                document.querySelector('.nav-home-mobile').textContent = t.nav.home;
+                document.querySelector('.nav-about-mobile').textContent = t.nav.about;
+                document.querySelector('.nav-experience-mobile').textContent = t.nav.experience;
+                document.querySelector('.nav-skills-mobile').textContent = t.nav.skills;
+                document.querySelector('.nav-projects-mobile').textContent = t.nav.projects;
+                document.querySelector('.nav-contact-mobile').textContent = t.nav.contact;
 
                 // Hero
                 document.querySelector('.available-text').textContent = t.hero.available;
@@ -1221,6 +1870,74 @@
                 document.querySelector('.skill-cat-devops').textContent = t.skills.categories.devops;
                 document.querySelector('.skill-cat-arch').textContent = t.skills.categories.arch;
                 document.querySelector('.skill-cat-tools').textContent = t.skills.categories.tools;
+
+
+                // Projects
+                document.querySelector('.projects-title').innerHTML = t.projects.title;
+                document.querySelector('.projects-subtitle').textContent = t.projects.subtitle;
+
+                // AI Project
+                document.querySelector('.project-ai-title').textContent = t.projects.ai.title;
+                document.querySelector('.project-ai-desc').textContent = t.projects.ai.desc;
+                document.querySelector('.project-ai-data-title').textContent = t.projects.ai.dataTitle;
+                document.querySelector('.project-ai-data-1').textContent = t.projects.ai.data1;
+                document.querySelector('.project-ai-data-2').textContent = t.projects.ai.data2;
+                document.querySelector('.project-ai-data-3').textContent = t.projects.ai.data3;
+                document.querySelector('.project-ai-agents-title').textContent = t.projects.ai.agentsTitle;
+                document.querySelector('.project-ai-agent-1').innerHTML = t.projects.ai.agent1;
+                document.querySelector('.project-ai-agent-2').innerHTML = t.projects.ai.agent2;
+                document.querySelector('.project-ai-agent-3').innerHTML = t.projects.ai.agent3;
+                document.querySelector('.project-ai-agent-4').innerHTML = t.projects.ai.agent4;
+                document.querySelector('.project-ai-feature-1').textContent = t.projects.ai.feature1;
+                document.querySelector('.project-ai-feature-2').textContent = t.projects.ai.feature2;
+                document.querySelector('.project-ai-feature-3').textContent = t.projects.ai.feature3;
+
+                // Gov Project
+                document.querySelector('.project-gov-title').textContent = t.projects.gov.title;
+                document.querySelector('.project-gov-desc').textContent = t.projects.gov.desc;
+                document.querySelector('.project-gov-sources-title').textContent = t.projects.gov.sourcesTitle;
+                document.querySelector('.project-gov-source-1').innerHTML = t.projects.gov.source1;
+                document.querySelector('.project-gov-source-2').innerHTML = t.projects.gov.source2;
+                document.querySelector('.project-gov-source-3').textContent = t.projects.gov.source3;
+                document.querySelector('.project-gov-challenges-title').textContent = t.projects.gov.challengesTitle;
+                document.querySelector('.project-gov-challenge-1').textContent = t.projects.gov.challenge1;
+                document.querySelector('.project-gov-challenge-2').textContent = t.projects.gov.challenge2;
+                document.querySelector('.project-gov-challenge-3').textContent = t.projects.gov.challenge3;
+                document.querySelector('.project-gov-feature-1').textContent = t.projects.gov.feature1;
+                document.querySelector('.project-gov-feature-2').textContent = t.projects.gov.feature2;
+                document.querySelector('.project-gov-feature-3').textContent = t.projects.gov.feature3;
+
+                // Sales Project
+                document.querySelector('.project-sales-title').textContent = t.projects.sales.title;
+                document.querySelector('.project-sales-desc').textContent = t.projects.sales.desc;
+                document.querySelector('.project-sales-stat-1').textContent = t.projects.sales.stat1;
+                document.querySelector('.project-sales-stat-2').textContent = t.projects.sales.stat2;
+                document.querySelector('.project-sales-stat-3').textContent = t.projects.sales.stat3;
+                document.querySelector('.project-sales-features-title').textContent = t.projects.sales.featuresTitle;
+                document.querySelector('.project-sales-feature-1').textContent = t.projects.sales.feature1;
+                document.querySelector('.project-sales-feature-2').textContent = t.projects.sales.feature2;
+                document.querySelector('.project-sales-feature-3').textContent = t.projects.sales.feature3;
+                document.querySelector('.project-sales-tech-title').textContent = t.projects.sales.techTitle;
+                document.querySelector('.project-sales-tech-1').textContent = t.projects.sales.tech1;
+                document.querySelector('.project-sales-tech-2').textContent = t.projects.sales.tech2;
+                document.querySelector('.project-sales-tech-3').textContent = t.projects.sales.tech3;
+
+                // Face Project
+                document.querySelector('.project-face-title').textContent = t.projects.face.title;
+                document.querySelector('.project-face-desc').textContent = t.projects.face.desc;
+                document.querySelector('.project-face-features-title').textContent = t.projects.face.featuresTitle;
+                document.querySelector('.project-face-feature-1').textContent = t.projects.face.feature1;
+                document.querySelector('.project-face-feature-2').textContent = t.projects.face.feature2;
+                document.querySelector('.project-face-feature-3').textContent = t.projects.face.feature3;
+                document.querySelector('.project-face-feature-4').textContent = t.projects.face.feature4;
+                document.querySelector('.project-face-security-title').textContent = t.projects.face.securityTitle;
+                document.querySelector('.project-face-security-1').textContent = t.projects.face.security1;
+                document.querySelector('.project-face-security-2').textContent = t.projects.face.security2;
+                document.querySelector('.project-face-security-3').textContent = t.projects.face.security3;
+                document.querySelector('.project-face-security-4').textContent = t.projects.face.security4;
+                document.querySelector('.project-face-stat-1').textContent = t.projects.face.stat1;
+                document.querySelector('.project-face-stat-2').textContent = t.projects.face.stat2;
+                document.querySelector('.project-face-stat-3').textContent = t.projects.face.stat3;
 
                 // Education
                 document.querySelector('.edu-title').innerHTML = t.education.title;
@@ -1269,7 +1986,16 @@
                 document.querySelector('.nav-about').textContent = t.nav.about;
                 document.querySelector('.nav-experience').textContent = t.nav.experience;
                 document.querySelector('.nav-skills').textContent = t.nav.skills;
+                document.querySelector('.nav-projects').textContent = t.nav.projects;
                 document.querySelector('.nav-contact').textContent = t.nav.contact;
+                
+                // Mobile navigation - CORREÇÃO: Inicializar mobile também
+                document.querySelector('.nav-home-mobile').textContent = t.nav.home;
+                document.querySelector('.nav-about-mobile').textContent = t.nav.about;
+                document.querySelector('.nav-experience-mobile').textContent = t.nav.experience;
+                document.querySelector('.nav-skills-mobile').textContent = t.nav.skills;
+                document.querySelector('.nav-projects-mobile').textContent = t.nav.projects;
+                document.querySelector('.nav-contact-mobile').textContent = t.nav.contact;
 
                 // Hero
                 document.querySelector('.available-text').textContent = t.hero.available;
@@ -1337,6 +2063,73 @@
                 document.querySelector('.skill-cat-devops').textContent = t.skills.categories.devops;
                 document.querySelector('.skill-cat-arch').textContent = t.skills.categories.arch;
                 document.querySelector('.skill-cat-tools').textContent = t.skills.categories.tools;
+
+                // Projects - CORREÇÃO: Adicionar tradução da seção Projects no carregamento inicial
+                document.querySelector('.projects-title').innerHTML = t.projects.title;
+                document.querySelector('.projects-subtitle').textContent = t.projects.subtitle;
+
+                // AI Project
+                document.querySelector('.project-ai-title').textContent = t.projects.ai.title;
+                document.querySelector('.project-ai-desc').textContent = t.projects.ai.desc;
+                document.querySelector('.project-ai-data-title').textContent = t.projects.ai.dataTitle;
+                document.querySelector('.project-ai-data-1').textContent = t.projects.ai.data1;
+                document.querySelector('.project-ai-data-2').textContent = t.projects.ai.data2;
+                document.querySelector('.project-ai-data-3').textContent = t.projects.ai.data3;
+                document.querySelector('.project-ai-agents-title').textContent = t.projects.ai.agentsTitle;
+                document.querySelector('.project-ai-agent-1').innerHTML = t.projects.ai.agent1;
+                document.querySelector('.project-ai-agent-2').innerHTML = t.projects.ai.agent2;
+                document.querySelector('.project-ai-agent-3').innerHTML = t.projects.ai.agent3;
+                document.querySelector('.project-ai-agent-4').innerHTML = t.projects.ai.agent4;
+                document.querySelector('.project-ai-feature-1').textContent = t.projects.ai.feature1;
+                document.querySelector('.project-ai-feature-2').textContent = t.projects.ai.feature2;
+                document.querySelector('.project-ai-feature-3').textContent = t.projects.ai.feature3;
+
+                // Gov Project
+                document.querySelector('.project-gov-title').textContent = t.projects.gov.title;
+                document.querySelector('.project-gov-desc').textContent = t.projects.gov.desc;
+                document.querySelector('.project-gov-sources-title').textContent = t.projects.gov.sourcesTitle;
+                document.querySelector('.project-gov-source-1').innerHTML = t.projects.gov.source1;
+                document.querySelector('.project-gov-source-2').innerHTML = t.projects.gov.source2;
+                document.querySelector('.project-gov-source-3').textContent = t.projects.gov.source3;
+                document.querySelector('.project-gov-challenges-title').textContent = t.projects.gov.challengesTitle;
+                document.querySelector('.project-gov-challenge-1').textContent = t.projects.gov.challenge1;
+                document.querySelector('.project-gov-challenge-2').textContent = t.projects.gov.challenge2;
+                document.querySelector('.project-gov-challenge-3').textContent = t.projects.gov.challenge3;
+                document.querySelector('.project-gov-feature-1').textContent = t.projects.gov.feature1;
+                document.querySelector('.project-gov-feature-2').textContent = t.projects.gov.feature2;
+                document.querySelector('.project-gov-feature-3').textContent = t.projects.gov.feature3;
+
+                // Sales Project
+                document.querySelector('.project-sales-title').textContent = t.projects.sales.title;
+                document.querySelector('.project-sales-desc').textContent = t.projects.sales.desc;
+                document.querySelector('.project-sales-stat-1').textContent = t.projects.sales.stat1;
+                document.querySelector('.project-sales-stat-2').textContent = t.projects.sales.stat2;
+                document.querySelector('.project-sales-stat-3').textContent = t.projects.sales.stat3;
+                document.querySelector('.project-sales-features-title').textContent = t.projects.sales.featuresTitle;
+                document.querySelector('.project-sales-feature-1').textContent = t.projects.sales.feature1;
+                document.querySelector('.project-sales-feature-2').textContent = t.projects.sales.feature2;
+                document.querySelector('.project-sales-feature-3').textContent = t.projects.sales.feature3;
+                document.querySelector('.project-sales-tech-title').textContent = t.projects.sales.techTitle;
+                document.querySelector('.project-sales-tech-1').textContent = t.projects.sales.tech1;
+                document.querySelector('.project-sales-tech-2').textContent = t.projects.sales.tech2;
+                document.querySelector('.project-sales-tech-3').textContent = t.projects.sales.tech3;
+
+                // Face Project
+                document.querySelector('.project-face-title').textContent = t.projects.face.title;
+                document.querySelector('.project-face-desc').textContent = t.projects.face.desc;
+                document.querySelector('.project-face-features-title').textContent = t.projects.face.featuresTitle;
+                document.querySelector('.project-face-feature-1').textContent = t.projects.face.feature1;
+                document.querySelector('.project-face-feature-2').textContent = t.projects.face.feature2;
+                document.querySelector('.project-face-feature-3').textContent = t.projects.face.feature3;
+                document.querySelector('.project-face-feature-4').textContent = t.projects.face.feature4;
+                document.querySelector('.project-face-security-title').textContent = t.projects.face.securityTitle;
+                document.querySelector('.project-face-security-1').textContent = t.projects.face.security1;
+                document.querySelector('.project-face-security-2').textContent = t.projects.face.security2;
+                document.querySelector('.project-face-security-3').textContent = t.projects.face.security3;
+                document.querySelector('.project-face-security-4').textContent = t.projects.face.security4;
+                document.querySelector('.project-face-stat-1').textContent = t.projects.face.stat1;
+                document.querySelector('.project-face-stat-2').textContent = t.projects.face.stat2;
+                document.querySelector('.project-face-stat-3').textContent = t.projects.face.stat3;
 
                 // Education
                 document.querySelector('.edu-title').innerHTML = t.education.title;
